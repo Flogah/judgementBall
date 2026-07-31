@@ -7,13 +7,17 @@ func _ready() -> void:
 	CameraSignal.connect("changeToTelephone", enterTelephone)
 
 func Enter():
+	freeCam.global_rotation = FreeCamRotation
 	changeCamera(freeCam)
 
 func enterFlipper():
+	FreeCamRotation = freeCam.global_rotation
 	Transitioned.emit(self, "cameraFlipper")
 	
 func enterTable():
+	FreeCamRotation = freeCam.global_rotation
 	Transitioned.emit(self, "cameraTable")
 
 func enterTelephone():
+	FreeCamRotation = freeCam.global_rotation
 	Transitioned.emit(self, "cameraTelephone")

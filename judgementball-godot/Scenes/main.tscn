@@ -94,7 +94,6 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
-transition_duration = null
 metadata/_custom_type_script = "uid://bm63j52e3mdkt"
 
 [node name="cameraTable" type="Node" parent="stateMachine" unique_id=1489646435 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
@@ -103,7 +102,6 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
-transition_duration = null
 metadata/_custom_type_script = "uid://bli7qmkpm0s63"
 
 [node name="cameraTelephone" type="Node" parent="stateMachine" unique_id=1588299471 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
@@ -112,7 +110,6 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
-transition_duration = null
 metadata/_custom_type_script = "uid://ilxqhhgvqrcy"
 
 [node name="CameraFlipper" type="Camera3D" parent="." unique_id=1552814639]

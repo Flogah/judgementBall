@@ -7,6 +7,8 @@ class_name StateCamera
 @export var TableCam: Camera3D
 @export var SwitchCam : Camera3D
 
+@onready var FreeCamRotation = freeCam.global_rotation #save free cam rotation to stop it from spinning when in another cam yeah
+
 @export var transition_duration: float = 2.0
 
 func _ready() -> void:
