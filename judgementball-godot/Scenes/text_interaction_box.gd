@@ -1,5 +1,6 @@
 extends Interactable
 
+@onready var mesh_instance_3d: MeshInstance3D = %MeshInstance3D
 @onready var spot_light_3d: SpotLight3D = %SpotLight3D
 
 var active:bool = false:

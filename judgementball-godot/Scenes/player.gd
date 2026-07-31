@@ -1,4 +1,7 @@
+class_name Player
 extends CharacterBody3D
+
+signal on_unfocus
 
 @export var movement_speed:float = 3.0
 @export var turn_speed:float = 0.3
@@ -7,6 +10,8 @@ extends CharacterBody3D
 @onready var interaction_ray_cast_3d: RayCast3D = %InteractionRayCast3D
 
 func _physics_process(delta: float) -> void:
+	highlight_interactable()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -32,7 +37,22 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if interaction_ray_cast_3d.is_colliding():
+		if is_looking_at_interactable():
+			var collider = interaction_ray_cast_3d.get_collider()
+			collider.interact()
+
+func highlight_interactable():
+	if is_looking_at_interactable():
+		var collider = interaction_ray_cast_3d.get_collider()
+		if collider is Interactable and !collider.focused:
+			collider.focused = true
+			collider.highlight(self)
+	else:
+		on_unfocus.emit()
+
+func is_looking_at_interactable() -> bool:
+	if interaction_ray_cast_3d.is_colliding():
 			var collider = interaction_ray_cast_3d.get_collider()
 			if collider is Interactable:
-				collider.interact()
+				return true
+	return false

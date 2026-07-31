@@ -3,23 +3,25 @@
 [ext_resource type="Script" uid="uid://cit87r5kbdvbs" path="res://Scenes/text_interaction_box.gd" id="1_pcvkn"]
 [ext_resource type="Texture2D" uid="uid://csxa3vhccgfee" path="res://Assets/KenneyProtoTextures/Red/texture_10.png" id="1_rv1js"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckr0i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sprw"]
 albedo_texture = ExtResource("1_rv1js")
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_ifpyu"]
-material = SubResource("StandardMaterial3D_ckr0i")
+[sub_resource type="SphereMesh" id="SphereMesh_4sprw"]
+material = SubResource("StandardMaterial3D_4sprw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ifpyu"]
 
-[node name="TextInteractionBox" type="StaticBody3D" unique_id=743646626]
+[node name="TextInteractionBox" type="StaticBody3D" unique_id=743646626 node_paths=PackedStringArray("highlight_model")]
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_pcvkn")
+highlight_model = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=878135698]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_ifpyu")
+mesh = SubResource("SphereMesh_4sprw")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=903006469]
 unique_name_in_owner = true
