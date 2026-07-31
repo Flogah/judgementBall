@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vwa743w80ls5" path="res://Scenes/Pintable/flipperLeft.tscn" id="3_y4eu1"]
 [ext_resource type="PackedScene" uid="uid://dfjlttjo74wq0" path="res://Scenes/Pintable/flipperRight.tscn" id="4_vqxl3"]
 [ext_resource type="PackedScene" uid="uid://bmuvpqjsd7gdm" path="res://Scenes/Pintable/score_area.tscn" id="5_0qhok"]
+[ext_resource type="PackedScene" uid="uid://dbfuv80cjm4bm" path="res://Scenes/Pintable/bumper.tscn" id="6_n8lgc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqxl3"]
 friction = 0.35
@@ -20,7 +21,7 @@ shadow_enabled = true
 transform = Transform3D(0.9948342, 0.101513095, 0, -0.101513095, 0.9948342, 0, 0, 0, 1, 0, 0.19284809, 0)
 
 [node name="ball" parent="." unique_id=1940181704 instance=ExtResource("2_y4eu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55697644, 0.7404728, 0.23066518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55697644, 0.7404728, -0.015759021)
 physics_material_override = SubResource("PhysicsMaterial_vqxl3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=929813964]
@@ -32,5 +33,20 @@ transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0.938389
 [node name="flipperLeft2" parent="." unique_id=47381103 instance=ExtResource("4_vqxl3")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0.938643, 0.25209284, -0.506)
 
-[node name="scoreArea" parent="." unique_id=394497735 instance=ExtResource("5_0qhok")]
-transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, 1.0375211, 0.280828, 0.0027698427)
+[node name="scoreArea" parent="." unique_id=1687520017 instance=ExtResource("5_0qhok")]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0.816, 0.177, 0)
+
+[node name="bumper" parent="." unique_id=1890445088 instance=ExtResource("6_n8lgc")]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.32, 0)
+
+[node name="bumper3" parent="." unique_id=689794937 instance=ExtResource("6_n8lgc")]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9121094, 0.37065917, -0.49533844)
+
+[node name="bumper2" parent="." unique_id=503641605 instance=ExtResource("6_n8lgc")]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9108887, 0.3923877, 0.4698372)
+
+[node name="bumper4" parent="." unique_id=2031501024 instance=ExtResource("6_n8lgc")]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.677124, 0.2200244, -0.49533844)
+
+[node name="bumper5" parent="." unique_id=1401767096 instance=ExtResource("6_n8lgc")]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.6783447, 0.24175292, 0.4698372)

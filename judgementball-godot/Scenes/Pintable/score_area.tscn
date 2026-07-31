@@ -1,20 +1,15 @@
 [gd_scene format=3 uid="uid://bmuvpqjsd7gdm"]
 
-[ext_resource type="Script" uid="uid://c1egnamcfdvqq" path="res://Scripts/mesh_instance_3d.gd" id="1_j84u3"]
+[ext_resource type="Script" uid="uid://bxvsvrixjeomv" path="res://Scripts/score_area.gd" id="1_j84u3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8jb5s"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_8jb5s"]
-
-[node name="scoreArea" type="Area3D" unique_id=394497735]
+[node name="scoreArea" type="Area3D" unique_id=1687520017]
 collision_layer = 0
 collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=143184995]
-shape = SubResource("BoxShape3D_8jb5s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1297990177]
-mesh = SubResource("BoxMesh_8jb5s")
 script = ExtResource("1_j84u3")
 
-[connection signal="area_entered" from="." to="MeshInstance3D" method="_on_score_area_area_entered"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=658402514]
+shape = SubResource("BoxShape3D_8jb5s")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
