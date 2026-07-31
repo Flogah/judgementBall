@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://pc7it30eng54" path="res://Scenes/player.tscn" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://coqmj8sirokk0" path="res://Assets/KenneyProtoTextures/Orange/texture_10.png" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cxy6xhck6w8fr" path="res://Scenes/text_interaction_box.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://c4bgr7vps4lnm" path="res://Scripts/CameraStates/state_machine.gd" id="5_ynf5e"]
+[ext_resource type="Script" uid="uid://d4ijq1ex26kri" path="res://Scripts/CameraStates/cameraFree.gd" id="6_hptm8"]
+[ext_resource type="Script" uid="uid://bm63j52e3mdkt" path="res://Scripts/CameraStates/cameraFlipper.gd" id="7_d1ilt"]
+[ext_resource type="Script" uid="uid://bli7qmkpm0s63" path="res://Scripts/CameraStates/cameraTable.gd" id="8_6iyac"]
+[ext_resource type="Script" uid="uid://ilxqhhgvqrcy" path="res://Scripts/CameraStates/cameraTelephone.gd" id="9_fdnlq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -70,3 +75,44 @@ shape = SubResource("BoxShape3D_ifpyu")
 
 [node name="TextInteractionBox" parent="." unique_id=743646626 instance=ExtResource("4_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5.5)
+
+[node name="stateMachine" type="Node" parent="." unique_id=129147187 node_paths=PackedStringArray("initalState")]
+script = ExtResource("5_ynf5e")
+initalState = NodePath("cameraFree")
+
+[node name="cameraFree" type="Node" parent="stateMachine" unique_id=916102461 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam")]
+script = ExtResource("6_hptm8")
+FlipCam = NodePath("../../CameraFlipper")
+TelCam = NodePath("../../CameraTelephone")
+TableCam = NodePath("../../CameraTable")
+metadata/_custom_type_script = "uid://d4ijq1ex26kri"
+
+[node name="cameraFlipper" type="Node" parent="stateMachine" unique_id=1164108836 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam")]
+script = ExtResource("7_d1ilt")
+FlipCam = NodePath("../../CameraFlipper")
+TelCam = NodePath("../../CameraTelephone")
+TableCam = NodePath("../../CameraTable")
+metadata/_custom_type_script = "uid://bm63j52e3mdkt"
+
+[node name="cameraTable" type="Node" parent="stateMachine" unique_id=1489646435 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam")]
+script = ExtResource("8_6iyac")
+FlipCam = NodePath("../../CameraFlipper")
+TelCam = NodePath("../../CameraTelephone")
+TableCam = NodePath("../../CameraTable")
+metadata/_custom_type_script = "uid://bli7qmkpm0s63"
+
+[node name="cameraTelephone" type="Node" parent="stateMachine" unique_id=1588299471 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam")]
+script = ExtResource("9_fdnlq")
+FlipCam = NodePath("../../CameraFlipper")
+TelCam = NodePath("../../CameraTelephone")
+TableCam = NodePath("../../CameraTable")
+metadata/_custom_type_script = "uid://ilxqhhgvqrcy"
+
+[node name="CameraFlipper" type="Camera3D" parent="." unique_id=1552814639]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.288805, 2.395126, 0)
+
+[node name="CameraTable" type="Camera3D" parent="." unique_id=479690664]
+transform = Transform3D(-1.6557772e-08, -0.92547953, 0.37879768, -4.0453994e-08, 0.37879768, 0.92547953, -1, 0, -4.371139e-08, -3.2025824, 2.395126, 0)
+
+[node name="CameraTelephone" type="Camera3D" parent="." unique_id=293066680]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.09138632, 2.395126, 2.8574166)

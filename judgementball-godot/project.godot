@@ -14,6 +14,10 @@ config/name="judgementball_godot"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CameraSignal="*uid://cqnq08qxnxe71"
+
 [display]
 
 window/stretch/mode="canvas_items"

@@ -6,7 +6,7 @@ signal on_unfocus
 @export var movement_speed:float = 3.0
 @export var turn_speed:float = 0.3
 
-@onready var camera_3d: Camera3D = %Camera3D
+@onready var camera_3d: Camera3D = %CameraFree
 @onready var interaction_ray_cast_3d: RayCast3D = %InteractionRayCast3D
 
 func _physics_process(delta: float) -> void:
