@@ -7,6 +7,7 @@ func _ready() -> void:
 	CameraSignal.connect("changeToTelephone", enterTelephone)
 
 func Enter():
+	CameraSignal.currentState = "Free"
 	freeCam.global_rotation = FreeCamRotation
 	changeCamera(freeCam)
 

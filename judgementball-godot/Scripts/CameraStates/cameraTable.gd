@@ -2,6 +2,7 @@ extends StateCamera
 class_name cameraTable
 
 func Enter():
+	CameraSignal.currentState = "Table"
 	changeCamera(TableCam)
 
 func _process(delta: float) -> void:

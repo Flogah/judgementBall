@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "backwards", "forward")
 	
-	if input_dir:
+	if input_dir && CameraSignal.currentState == "Free":
 		var forwards_motion = cam_forward * input_dir.y
 		var sideways_motion = cam_right * input_dir.x
 		var combined_motion = (forwards_motion + sideways_motion)

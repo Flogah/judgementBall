@@ -2,6 +2,7 @@ extends StateCamera
 class_name cameraFlipper
 
 func Enter():
+	CameraSignal.currentState = "Flipper"
 	changeCamera(FlipCam)
 	
 func _process(delta: float) -> void:
