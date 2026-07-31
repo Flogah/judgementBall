@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://pc7it30eng54" path="res://Scenes/player.tscn" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://coqmj8sirokk0" path="res://Assets/KenneyProtoTextures/Orange/texture_10.png" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cxy6xhck6w8fr" path="res://Scenes/text_interaction_box.tscn" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://xq22ooigcivu" path="res://Assets/Textures/eye.png" id="5_kry3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,6 +36,42 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_jjgbg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ifpyu"]
+
+[sub_resource type="Curve" id="Curve_wfygy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cimru"]
+curve = SubResource("Curve_wfygy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3x2fi"]
+emission_shape_scale = Vector3(1, 0, 1)
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_cimru")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lico6"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_kry3j")
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xkxxa"]
+material = SubResource("StandardMaterial3D_lico6")
+flip_faces = true
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kry3j"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ifpyu"]
+material = SubResource("StandardMaterial3D_kry3j")
+flip_faces = true
+radius = 50.0
+height = 50.0
+is_hemisphere = true
 
 [node name="Main" type="Node3D" unique_id=727934956]
 
@@ -70,3 +107,14 @@ shape = SubResource("BoxShape3D_ifpyu")
 
 [node name="TextInteractionBox" parent="." unique_id=743646626 instance=ExtResource("4_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5.5)
+
+[node name="EyeParticles" type="GPUParticles3D" parent="." unique_id=63730790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.446533, 0)
+amount = 10
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_3x2fi")
+draw_pass_1 = SubResource("PlaneMesh_xkxxa")
+
+[node name="SkyDome" type="MeshInstance3D" parent="." unique_id=24054208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.642721, 0)
+mesh = SubResource("SphereMesh_ifpyu")
