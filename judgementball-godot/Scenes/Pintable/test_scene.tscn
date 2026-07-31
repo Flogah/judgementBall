@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://vsyhy14hl6gr"]
+
+[ext_resource type="PackedScene" uid="uid://bxuf6ssvaw8dx" path="res://Scenes/Pintable/pintable.tscn" id="1_4x2ey"]
+[ext_resource type="PackedScene" uid="uid://brr7tarbm1avr" path="res://Scenes/Pintable/ball.tscn" id="2_y4eu1"]
+[ext_resource type="PackedScene" uid="uid://vwa743w80ls5" path="res://Scenes/Pintable/flipperLeft.tscn" id="3_y4eu1"]
+[ext_resource type="PackedScene" uid="uid://dfjlttjo74wq0" path="res://Scenes/Pintable/flipperRight.tscn" id="4_vqxl3"]
+
+[node name="testScene" type="Node3D" unique_id=1670743855]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=158129892]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="pintable" parent="." unique_id=1671433881 instance=ExtResource("1_4x2ey")]
+transform = Transform3D(0.95486915, 0.2970268, 0, -0.2970268, 0.95486915, 0, 0, 0, 1, 0, 0.19284809, 0)
+
+[node name="ball" parent="." unique_id=1940181704 instance=ExtResource("2_y4eu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55697644, 0.7404728, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=929813964]
+transform = Transform3D(-3.466992e-08, -0.6090194, 0.7931553, -2.6621086e-08, 0.7931553, 0.6090194, -1, -1.7763568e-15, -4.371139e-08, 1.7030096, 1.5128641, 0)
+
+[node name="flipperLeft" parent="." unique_id=1636917743 instance=ExtResource("3_y4eu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1057462, 0.017908946, 0.50576043)
+
+[node name="flipperLeft2" parent="." unique_id=47381103 instance=ExtResource("4_vqxl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.106, 0.018, -0.506)
