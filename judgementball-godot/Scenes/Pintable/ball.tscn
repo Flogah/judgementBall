@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brr7tarbm1avr"]
 
 [ext_resource type="Script" uid="uid://cfjhgmrt53qn" path="res://Scripts/ball.gd" id="1_irkkq"]
+[ext_resource type="Material" uid="uid://d1gkoq3dqg3nm" path="res://Assets/Materials/metalBall.tres" id="2_irbrd"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8jb5s"]
 radius = 0.05
@@ -14,6 +15,7 @@ collision_layer = 3
 script = ExtResource("1_irkkq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=77853709]
+material_override = ExtResource("2_irbrd")
 mesh = SubResource("SphereMesh_8jb5s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1252369540]
@@ -21,7 +23,9 @@ shape = SubResource("ConvexPolygonShape3D_v18oj")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=580445080]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 4
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1118044563]
 shape = SubResource("ConvexPolygonShape3D_v18oj")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
