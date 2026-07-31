@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var turn_speed:float = 0.3
 
 @onready var camera_3d: Camera3D = %Camera3D
+@onready var interaction_ray_cast_3d: RayCast3D = %InteractionRayCast3D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,3 +29,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, 5.0)
 
 	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if interaction_ray_cast_3d.is_colliding():
+			var collider = interaction_ray_cast_3d.get_collider()
+			if collider is Interactable:
+				collider.interact()

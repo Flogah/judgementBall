@@ -6,7 +6,10 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ifpyu"]
 
 [node name="Player" type="CharacterBody3D" unique_id=2142742757]
+collision_layer = 2
 script = ExtResource("1_cvnsp")
+movement_speed = null
+turn_speed = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1964304212]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -16,3 +19,8 @@ shape = SubResource("CapsuleShape3D_ifpyu")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 script = ExtResource("2_6t5aa")
+
+[node name="InteractionRayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1399902229]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -2)
+collision_mask = 4
