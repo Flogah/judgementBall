@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfjlttjo74wq0" path="res://Scenes/Pintable/flipperRight.tscn" id="4_vqxl3"]
 [ext_resource type="PackedScene" uid="uid://bmuvpqjsd7gdm" path="res://Scenes/Pintable/score_area.tscn" id="5_0qhok"]
 [ext_resource type="PackedScene" uid="uid://dbfuv80cjm4bm" path="res://Scenes/Pintable/bumper.tscn" id="6_n8lgc"]
-[ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/ui.tscn" id="7_vbpn2"]
+[ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/scoreLabel.tscn" id="7_vbpn2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqxl3"]
 friction = 0.35

@@ -1,4 +1,4 @@
-extends Control
+extends Label
 
 
 func _ready() -> void:
@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func changeScore(addScore: float):
 	Global.score += addScore
-	$score.text = ("Score: " + str(Global.score))
+	text = ("Score: " + str(Global.score))

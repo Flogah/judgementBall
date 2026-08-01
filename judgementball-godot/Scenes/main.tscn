@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bm63j52e3mdkt" path="res://Scripts/CameraStates/cameraFlipper.gd" id="7_d1ilt"]
 [ext_resource type="Script" uid="uid://bli7qmkpm0s63" path="res://Scripts/CameraStates/cameraTable.gd" id="8_6iyac"]
 [ext_resource type="Script" uid="uid://ilxqhhgvqrcy" path="res://Scripts/CameraStates/cameraTelephone.gd" id="9_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/scoreLabel.tscn" id="10_hptm8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,6 +43,8 @@ material = SubResource("StandardMaterial3D_jjgbg")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ifpyu"]
 
 [node name="Main" type="Node3D" unique_id=727934956]
+
+[node name="score" parent="." unique_id=1612659804 instance=ExtResource("10_hptm8")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1142684316]
 environment = SubResource("Environment_jjvhh")
