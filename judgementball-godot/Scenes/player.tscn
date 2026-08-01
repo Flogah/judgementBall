@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cmfikqd870dq1" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://bktfh6egd7uor" path="res://Scenes/camera.gd" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://doy4cxpp0ii2p" path="res://Scenes/in_game_menu.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ifpyu"]
 
 [node name="Player" type="CharacterBody3D" unique_id=2142742757]
 collision_layer = 2
 script = ExtResource("1_cvnsp")
-movement_speed = null
-turn_speed = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1964304212]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -24,3 +23,6 @@ script = ExtResource("2_6t5aa")
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -2)
 collision_mask = 4
+
+[node name="inGameMenu" parent="." unique_id=957601345 instance=ExtResource("3_6t5aa")]
+visible = false

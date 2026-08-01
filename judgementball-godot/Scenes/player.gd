@@ -9,6 +9,11 @@ signal on_unfocus
 @onready var camera_3d: Camera3D = %CameraFree
 @onready var interaction_ray_cast_3d: RayCast3D = %InteractionRayCast3D
 
+@onready var menu: Control = $inGameMenu
+
+func _ready() -> void:
+	menu.visible = false
+
 func _physics_process(delta: float) -> void:
 	highlight_interactable()
 	
@@ -40,6 +45,13 @@ func _input(event: InputEvent) -> void:
 		if is_looking_at_interactable():
 			var collider = interaction_ray_cast_3d.get_collider()
 			collider.interact()
+	
+	if event.is_action_pressed("menu"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		menu.visible = !menu.visible
+		if menu.visible == false:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func highlight_interactable():
 	if is_looking_at_interactable():

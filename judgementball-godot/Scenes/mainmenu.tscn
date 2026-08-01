@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://ouj2pajwhrkx"]
+
+[ext_resource type="Script" path="res://Scripts/mainmenu.gd" id="1_pposm"]
+
+[sub_resource type="Theme" id="Theme_8jb5s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5klak"]
+bg_color = Color(0.08598376, 0.08598376, 0.085983716, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orker"]
+bg_color = Color(0.51720196, 0.04545342, 0.101603664, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prm8q"]
+bg_color = Color(0.2922147, 0.03267499, 0.08175755, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="mainmenu" type="Control" unique_id=71925424]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pposm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=839938233]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -108.0
+offset_right = 185.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer" unique_id=766797395]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_8jb5s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5klak")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_orker")
+theme_override_styles/hover = SubResource("StyleBoxFlat_prm8q")
+text = "Start Game"
+
+[node name="ButtonNewGame" type="Button" parent="VBoxContainer" unique_id=1261041545]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_8jb5s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5klak")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_orker")
+theme_override_styles/hover = SubResource("StyleBoxFlat_prm8q")
+text = "New Game"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=1774036935]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_8jb5s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5klak")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_orker")
+theme_override_styles/hover = SubResource("StyleBoxFlat_prm8q")
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="." unique_id=1271805624]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 69.0
+offset_right = 170.0
+offset_bottom = 156.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 51
+text = "JUDGEMENT BALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonNewGame" to="." method="_on_button_new_game_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_button_up"]
