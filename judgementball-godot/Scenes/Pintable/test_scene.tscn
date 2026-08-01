@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bmuvpqjsd7gdm" path="res://Scenes/Pintable/score_area.tscn" id="5_0qhok"]
 [ext_resource type="PackedScene" uid="uid://dbfuv80cjm4bm" path="res://Scenes/Pintable/bumper.tscn" id="6_n8lgc"]
 [ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/scoreLabel.tscn" id="7_vbpn2"]
+[ext_resource type="AudioStream" uid="uid://ch5awlrtbn0rk" path="res://Assets/Sounds/hard_bumper_hit.wav" id="8_q0i8k"]
+[ext_resource type="Script" uid="uid://byg5bv875fs63" path="res://Scenes/Pintable/bumperSounds.gd" id="9_laisa"]
+[ext_resource type="AudioStream" uid="uid://dy83y1m4kd003" path="res://Assets/Sounds/hard_bumper_hit2.wav" id="10_ltd7w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqxl3"]
 friction = 0.35
@@ -37,20 +40,30 @@ transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0.938643
 [node name="scoreArea" parent="." unique_id=1687520017 instance=ExtResource("5_0qhok")]
 transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0.816, 0.177, 0)
 
-[node name="bumper" parent="." unique_id=1890445088 instance=ExtResource("6_n8lgc")]
+[node name="bumper" parent="." unique_id=1890445088 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.32, 0)
 points = 5.0
+audioPlayer = NodePath("../AudioStreamPlayer3D")
 
-[node name="bumper3" parent="." unique_id=689794937 instance=ExtResource("6_n8lgc")]
+[node name="bumper3" parent="." unique_id=689794937 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9121094, 0.37065917, -0.49533844)
+audioPlayer = NodePath("../AudioStreamPlayer3D")
 
-[node name="bumper2" parent="." unique_id=503641605 instance=ExtResource("6_n8lgc")]
+[node name="bumper2" parent="." unique_id=503641605 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9108887, 0.3923877, 0.4698372)
+audioPlayer = NodePath("../AudioStreamPlayer3D")
 
-[node name="bumper4" parent="." unique_id=2031501024 instance=ExtResource("6_n8lgc")]
+[node name="bumper4" parent="." unique_id=2031501024 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.677124, 0.2200244, -0.49533844)
+audioPlayer = NodePath("../AudioStreamPlayer3D")
 
-[node name="bumper5" parent="." unique_id=1401767096 instance=ExtResource("6_n8lgc")]
+[node name="bumper5" parent="." unique_id=1401767096 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.6783447, 0.24175292, 0.4698372)
+audioPlayer = NodePath("../AudioStreamPlayer3D")
 
 [node name="UI" parent="." unique_id=112420969 instance=ExtResource("7_vbpn2")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=610576903]
+stream = ExtResource("8_q0i8k")
+script = ExtResource("9_laisa")
+streams = Array[AudioStream]([ExtResource("8_q0i8k"), ExtResource("10_ltd7w")])
