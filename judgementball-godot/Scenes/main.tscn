@@ -71,8 +71,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_ifpyu"]
 material = SubResource("StandardMaterial3D_kry3j")
 flip_faces = true
-radius = 50.0
-height = 50.0
+radius = 15.0
 is_hemisphere = true
 
 [node name="Main" type="Node3D" unique_id=727934956]
@@ -111,7 +110,7 @@ shape = SubResource("BoxShape3D_ifpyu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5.5)
 
 [node name="EyeParticles" type="GPUParticles3D" parent="." unique_id=63730790]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.446533, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.948996, 0)
 amount = 25
 amount_ratio = 0.5
 lifetime = 15.0
