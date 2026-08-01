@@ -5,6 +5,7 @@ var curRot: float
 
 func _ready() -> void:
 	curRot = rotation_degrees.y
+	Global.changeFlipperLength.connect(changeLength)
 
 
 func _physics_process(delta: float) -> void:
@@ -14,6 +15,5 @@ func _physics_process(delta: float) -> void:
 	elif rotation_degrees.y <= curRot:
 		rotate(Vector3.UP, 10*delta)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("update"):
-		global_scale(Vector3(1, 1, 1.01))
+func changeLength():
+	global_scale(Vector3(1, 1, 1.01))
