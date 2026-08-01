@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ch5awlrtbn0rk" path="res://Assets/Sounds/hard_bumper_hit.wav" id="8_q0i8k"]
 [ext_resource type="Script" uid="uid://byg5bv875fs63" path="res://Scenes/Pintable/bumperSounds.gd" id="9_laisa"]
 [ext_resource type="AudioStream" uid="uid://dy83y1m4kd003" path="res://Assets/Sounds/hard_bumper_hit2.wav" id="10_ltd7w"]
+[ext_resource type="AudioStream" uid="uid://dcrhllh84ubuw" path="res://Assets/Sounds/Soft_bumper_hit.wav" id="11_1hsj5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqxl3"]
 friction = 0.35
@@ -66,4 +67,4 @@ audioPlayer = NodePath("../AudioStreamPlayer3D")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=610576903]
 stream = ExtResource("8_q0i8k")
 script = ExtResource("9_laisa")
-streams = Array[AudioStream]([ExtResource("8_q0i8k"), ExtResource("10_ltd7w")])
+streams = Array[AudioStream]([ExtResource("8_q0i8k"), ExtResource("10_ltd7w"), ExtResource("11_1hsj5")])
