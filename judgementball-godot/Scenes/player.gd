@@ -12,7 +12,6 @@ signal on_unfocus
 @onready var menu: Control = $inGameMenu
 
 func _ready() -> void:
-	print(menu.visible)
 	menu.visible = false
 
 func _physics_process(delta: float) -> void:
