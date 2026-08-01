@@ -38,29 +38,31 @@ material = SubResource("StandardMaterial3D_jjgbg")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ifpyu"]
 
 [sub_resource type="Curve" id="Curve_wfygy"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16595745, 1), 0.0, 0.0, 0, 0, Vector2(0.6510638, 0.9959677), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_cimru"]
 curve = SubResource("Curve_wfygy")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3x2fi"]
-emission_shape_scale = Vector3(1, 0, 1)
+emission_shape_scale = Vector3(1, 0.1, 1)
 emission_shape = 1
 emission_sphere_radius = 10.0
+flatness = 1.0
 gravity = Vector3(0, 0, 0)
 alpha_curve = SubResource("CurveTexture_cimru")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lico6"]
 transparency = 1
 shading_mode = 0
+vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("5_kry3j")
 disable_receive_shadows = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xkxxa"]
 material = SubResource("StandardMaterial3D_lico6")
-flip_faces = true
 size = Vector2(0.5, 0.5)
+orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kry3j"]
 shading_mode = 0
@@ -110,8 +112,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5.5)
 
 [node name="EyeParticles" type="GPUParticles3D" parent="." unique_id=63730790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.446533, 0)
-amount = 10
-lifetime = 4.0
+amount = 25
+amount_ratio = 0.5
+lifetime = 15.0
+transform_align = 1
+transform_align_channel_filter = 1
 process_material = SubResource("ParticleProcessMaterial_3x2fi")
 draw_pass_1 = SubResource("PlaneMesh_xkxxa")
 
