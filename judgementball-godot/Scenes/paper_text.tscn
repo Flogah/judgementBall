@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cuijqyd0uy8sl"]
+
+[ext_resource type="Script" uid="uid://jw4mx0724p5a" path="res://Scenes/paper_text.gd" id="1_4x3ma"]
+
+[node name="paperText" type="Control" unique_id=1698577840]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4x3ma")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2049941228]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -305.5
+offset_right = 216.0
+offset_bottom = 305.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.98039216, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1426354476]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -289.0
+offset_right = 203.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
