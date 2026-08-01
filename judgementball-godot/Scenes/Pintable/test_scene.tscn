@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfjlttjo74wq0" path="res://Scenes/Pintable/flipperRight.tscn" id="4_vqxl3"]
 [ext_resource type="PackedScene" uid="uid://bmuvpqjsd7gdm" path="res://Scenes/Pintable/score_area.tscn" id="5_0qhok"]
 [ext_resource type="PackedScene" uid="uid://dbfuv80cjm4bm" path="res://Scenes/Pintable/bumper.tscn" id="6_n8lgc"]
+[ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/ui.tscn" id="7_vbpn2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqxl3"]
 friction = 0.35
@@ -38,6 +39,7 @@ transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0.816, 0.177, 0)
 
 [node name="bumper" parent="." unique_id=1890445088 instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.32, 0)
+points = 5.0
 
 [node name="bumper3" parent="." unique_id=689794937 instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9121094, 0.37065917, -0.49533844)
@@ -50,3 +52,5 @@ transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.677124, 0.22002
 
 [node name="bumper5" parent="." unique_id=1401767096 instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.6783447, 0.24175292, 0.4698372)
+
+[node name="UI" parent="." unique_id=112420969 instance=ExtResource("7_vbpn2")]

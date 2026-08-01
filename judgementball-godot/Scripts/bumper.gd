@@ -1,10 +1,12 @@
 extends StaticBody3D
 
 @export var mesh: MeshInstance3D
+@export var points: float = 10
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	mesh.mesh.top_radius = 0.7
 	mesh.mesh.bottom_radius = 0.7
+	Global.changeScore.emit(points)
 
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
