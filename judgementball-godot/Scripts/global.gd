@@ -38,7 +38,7 @@ var cases: Dictionary = {
 				"2" : "Das Opfer ist die Oma des Angeklagten. Todesursache von außen nicht erkennbar.",
 				"3" : "Neben dem Opfer wurden Herzmedikamente gefunden. Tests bestätigen eine erhöhte Menge dieser Medikamente im Körper des Opfers.",
 				"4" : "Das Opfer wurde liegend und zugedeckt im eigenen Bett aufgefunden. Das Zimmer erscheint sauber und ordentlich.",
-				"5" : "Der Angeklagte habe die Polizei gerufen, nachem dieser von der Schule heimkehrte. Im Gepäck habe er eine Mathearbeit mit der Note '5'.",
+				"5" : "Der Angeklagte habe die Polizei gerufen, nachdem dieser von der Schule heimkehrte. Im Gepäck habe er eine Mathearbeit mit der Note '5'.",
 				"Guilty" : false,
 				},
 	"4" : {
@@ -46,7 +46,7 @@ var cases: Dictionary = {
 				"2" : "Das Opfer ist dafür bekannt sehr streng und unbeliebt bei den Campern zu sein. Der Angeklagte wurde zuletzt von ihm bestraft.",
 				"3" : "Eine blutige Axt, welche als Waffe dieses Mordes bestätigt wurde, wurde im Körper des Opfers gefunden.",
 				"4" : "Das Opfer wurde im Camp gefunden, welches eine Waldhütte am See ist.",
-				"5" : "Der Angeklagte sei seit Stunden im 'Zelt für böse Jungs' eingesperrt gewesen zu sein",
+				"5" : "Der Angeklagte scheint seit Stunden im 'Zelt für böse Jungs' eingesperrt gewesen zu sein",
 				"Guilty" : false,
 				},
 	
