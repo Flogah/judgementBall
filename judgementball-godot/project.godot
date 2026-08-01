@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 CameraSignal="*uid://cqnq08qxnxe71"
-Global="*uid://pft35m1p7mmj"
+Global="*uid://dur0l1hurtasc"
 
 [display]
 
@@ -99,3 +99,4 @@ leftClick={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/default_filters/use_nearest_mipmap_filter=true

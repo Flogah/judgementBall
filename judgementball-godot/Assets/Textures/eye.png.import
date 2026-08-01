@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byefgb30vleis"
-path.s3tc="res://.godot/imported/texture_01.png-402fb0c14a22ad416dccb2aa22c73591.s3tc.ctex"
+uid="uid://xq22ooigcivu"
+path.s3tc="res://.godot/imported/eye.png-e0dfbb4531935a504365f482e421733f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/KenneyProtoTextures/Light/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-402fb0c14a22ad416dccb2aa22c73591.s3tc.ctex"]
+source_file="res://Assets/Textures/eye.png"
+dest_files=["res://.godot/imported/eye.png-e0dfbb4531935a504365f482e421733f.s3tc.ctex"]
 
 [params]
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmfikqd870dq1" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://bktfh6egd7uor" path="res://Scenes/camera.gd" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://doy4cxpp0ii2p" path="res://Scenes/in_game_menu.tscn" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://cuijqyd0uy8sl" path="res://Scenes/paper_text.tscn" id="4_vgqql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ifpyu"]
 
@@ -18,6 +19,7 @@ shape = SubResource("CapsuleShape3D_ifpyu")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 script = ExtResource("2_6t5aa")
+max_vertical_angle = 1.5707963267948966
 
 [node name="InteractionRayCast3D" type="RayCast3D" parent="CameraFree" unique_id=1399902229]
 unique_name_in_owner = true
@@ -26,3 +28,5 @@ collision_mask = 4
 
 [node name="inGameMenu" parent="." unique_id=957601345 instance=ExtResource("3_6t5aa")]
 visible = false
+
+[node name="paperText" parent="." unique_id=1698577840 instance=ExtResource("4_vgqql")]
