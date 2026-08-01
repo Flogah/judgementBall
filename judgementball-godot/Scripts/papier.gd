@@ -2,6 +2,7 @@ extends Interactable
 
 @onready var mesh_instance_3d: MeshInstance3D = %MeshInstance3D
 @onready var spot_light_3d: SpotLight3D = %SpotLight3D
+@export var clueNbr : int = 1
 
 var active:bool = false:
 	set(new_value):
@@ -10,5 +11,4 @@ var active:bool = false:
 
 func interact():
 	active = not active
-	#CameraSignal.changeToFlipper.emit()
-	Global.updateClues.emit()
+	Global.openPaper.emit(Global.cases[str(Global.currentCase)][str(clueNbr)])
