@@ -7,6 +7,9 @@ signal changeScore(addScore: float)
 signal changeFlipperLength
 signal hitBumper
 
+signal flipperUp
+signal flipperDown
+
 signal openPaper(text: String)
 
 var clues: int = 0
