@@ -78,3 +78,4 @@ menu={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/default_filters/use_nearest_mipmap_filter=true
