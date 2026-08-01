@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b0xlpya7e51i1"]
 
+[ext_resource type="Script" uid="uid://v2ur6k4goxu4" path="res://Scripts/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://diei01fiq71kw" path="res://Assets/KenneyProtoTextures/Dark/texture_04.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://pc7it30eng54" path="res://Scenes/player.tscn" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://coqmj8sirokk0" path="res://Assets/KenneyProtoTextures/Orange/texture_10.png" id="2_bo1nx"]
@@ -53,7 +54,9 @@ size = Vector2(2, 1.285)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdnlq"]
 points = PackedVector3Array(-1, 0, -0.6425, -1, 0, 0.6423742, 1, 0, -0.6425, 1, 0, 0.6423742)
 
-[node name="Main" type="Node3D" unique_id=727934956]
+[node name="Main" type="Node3D" unique_id=727934956 node_paths=PackedStringArray("papers")]
+script = ExtResource("1_6iyac")
+papers = [NodePath("papier1"), NodePath("papier2"), NodePath("papier3"), NodePath("papier4"), NodePath("papier5")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1142684316]
 environment = SubResource("Environment_jjvhh")
@@ -134,24 +137,116 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.09
 [node name="CameraSwitching" type="Camera3D" parent="." unique_id=1076139143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09138632, 2.395126, 4.05078)
 
-[node name="papier" type="StaticBody3D" parent="." unique_id=188550847 node_paths=PackedStringArray("highlight_model")]
+[node name="papier1" type="StaticBody3D" parent="." unique_id=188550847 node_paths=PackedStringArray("highlight_model")]
 transform = Transform3D(0.8853736, 0.46488026, 0, -0.46488026, 0.8853736, 0, 0, 0, 1, -5.7648053, 0.7743497, -0.48811436)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("10_d1ilt")
 highlight_model = NodePath("MeshInstance3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="papier" unique_id=878135698]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="papier1" unique_id=878135698]
 unique_name_in_owner = true
 transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
 mesh = SubResource("PlaneMesh_5klak")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="papier" unique_id=218218037]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papier1" unique_id=218218037]
 transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
 shape = SubResource("ConvexPolygonShape3D_fdnlq")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="papier" unique_id=903006469]
+[node name="SpotLight3D" type="SpotLight3D" parent="papier1" unique_id=903006469]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
+visible = false
+light_energy = 5.0
+spot_range = 6.5
+spot_angle = 30.882586
+
+[node name="papier2" type="StaticBody3D" parent="." unique_id=1068687010 node_paths=PackedStringArray("highlight_model")]
+transform = Transform3D(0.8853736, 0.46488026, 0, -0.46488026, 0.8853736, 0, 0, 0, 1, -5.7648053, 0.7743497, 1.5118856)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("10_d1ilt")
+clueNbr = 2
+highlight_model = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="papier2" unique_id=4442539]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+mesh = SubResource("PlaneMesh_5klak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papier2" unique_id=17388913]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+shape = SubResource("ConvexPolygonShape3D_fdnlq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="papier2" unique_id=1141567869]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
+visible = false
+light_energy = 5.0
+spot_range = 6.5
+spot_angle = 30.882586
+
+[node name="papier3" type="StaticBody3D" parent="." unique_id=56537477 node_paths=PackedStringArray("highlight_model")]
+transform = Transform3D(0.8853736, 0.46488026, 0, -0.46488026, 0.8853736, 0, 0, 0, 1, -5.7648053, 0.7743497, -2.4881144)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("10_d1ilt")
+clueNbr = 3
+highlight_model = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="papier3" unique_id=902160383]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+mesh = SubResource("PlaneMesh_5klak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papier3" unique_id=613505943]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+shape = SubResource("ConvexPolygonShape3D_fdnlq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="papier3" unique_id=1203875959]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
+visible = false
+light_energy = 5.0
+spot_range = 6.5
+spot_angle = 30.882586
+
+[node name="papier4" type="StaticBody3D" parent="." unique_id=1098953831 node_paths=PackedStringArray("highlight_model")]
+transform = Transform3D(0.8853736, 0.46488026, 0, -0.46488026, 0.8853736, 0, 0, 0, 1, -5.7648053, 0.7743497, 3.5118856)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("10_d1ilt")
+clueNbr = 4
+highlight_model = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="papier4" unique_id=1614520992]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+mesh = SubResource("PlaneMesh_5klak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papier4" unique_id=1970259766]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+shape = SubResource("ConvexPolygonShape3D_fdnlq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="papier4" unique_id=1871570407]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
+visible = false
+light_energy = 5.0
+spot_range = 6.5
+spot_angle = 30.882586
+
+[node name="papier5" type="StaticBody3D" parent="." unique_id=757848627 node_paths=PackedStringArray("highlight_model")]
+transform = Transform3D(0.8853736, 0.46488026, 0, -0.46488026, 0.8853736, 0, 0, 0, 1, -5.7648053, 0.7743497, -4.4881144)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("10_d1ilt")
+clueNbr = 5
+highlight_model = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="papier5" unique_id=1357215695]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+mesh = SubResource("PlaneMesh_5klak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="papier5" unique_id=1555038295]
+transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
+shape = SubResource("ConvexPolygonShape3D_fdnlq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="papier5" unique_id=962728594]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
 visible = false
 light_energy = 5.0
