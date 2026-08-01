@@ -6,8 +6,13 @@ signal on_unfocus
 @export var movement_speed:float = 3.0
 @export var turn_speed:float = 0.3
 
-@onready var camera_3d: Camera3D = %Camera3D
+@onready var camera_3d: Camera3D = %CameraFree
 @onready var interaction_ray_cast_3d: RayCast3D = %InteractionRayCast3D
+
+@onready var menu: Control = $inGameMenu
+
+func _ready() -> void:
+	menu.visible = false
 
 func _physics_process(delta: float) -> void:
 	highlight_interactable()
@@ -23,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "backwards", "forward")
 	
-	if input_dir:
+	if input_dir && CameraSignal.currentState == "Free":
 		var forwards_motion = cam_forward * input_dir.y
 		var sideways_motion = cam_right * input_dir.x
 		var combined_motion = (forwards_motion + sideways_motion)
@@ -40,6 +45,13 @@ func _input(event: InputEvent) -> void:
 		if is_looking_at_interactable():
 			var collider = interaction_ray_cast_3d.get_collider()
 			collider.interact()
+	
+	if event.is_action_pressed("menu"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		menu.visible = !menu.visible
+		if menu.visible == false:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func highlight_interactable():
 	if is_looking_at_interactable():

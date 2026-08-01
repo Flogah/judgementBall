@@ -10,3 +10,4 @@ var active:bool = false:
 
 func interact():
 	active = not active
+	CameraSignal.changeToFlipper.emit()

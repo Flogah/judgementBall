@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://doy4cxpp0ii2p"]
+
+[ext_resource type="Script" uid="uid://dthayxb1a3syb" path="res://Scripts/in_game_menu.gd" id="1_c42cd"]
+
+[sub_resource type="Theme" id="Theme_y06y5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c42cd"]
+bg_color = Color(0.08598376, 0.08598376, 0.085983716, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5crhr"]
+bg_color = Color(0.51720196, 0.04545342, 0.101603664, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0mag"]
+bg_color = Color(0.2922147, 0.03267499, 0.08175755, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="inGameMenu" type="Control" unique_id=957601345]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c42cd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=195459585]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -205.0
+offset_right = 260.5
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonResume" type="Button" parent="VBoxContainer" unique_id=1243087515]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y06y5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c42cd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5crhr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n0mag")
+text = "Resume"
+
+[node name="ButtonMainMenu" type="Button" parent="VBoxContainer" unique_id=1461399259]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y06y5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c42cd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5crhr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n0mag")
+text = "Main Menu"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=985786861]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y06y5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c42cd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5crhr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n0mag")
+text = "Quit
+"
+
+[connection signal="button_up" from="VBoxContainer/ButtonResume" to="." method="_on_button_resume_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonMainMenu" to="." method="_on_button_main_menu_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_button_up"]
