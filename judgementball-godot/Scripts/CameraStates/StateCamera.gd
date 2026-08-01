@@ -11,6 +11,8 @@ class_name StateCamera
 
 @export var transition_duration: float = 2.0
 
+var tween : Tween
+
 func _ready() -> void:
 	freeCam = get_viewport().get_camera_3d()
 
@@ -20,7 +22,9 @@ func changeCamera(newCam: Camera3D):
 	SwitchCam.global_rotation = curCam.global_rotation
 	SwitchCam.make_current()
 	
-	var tween = create_tween().set_parallel(true)
+	if tween:
+		tween.kill()
+	tween = create_tween().set_parallel(true)
 	tween.set_trans(Tween.TRANS_CUBIC) 
 	tween.set_ease(Tween.EASE_IN_OUT)
 
