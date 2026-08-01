@@ -9,7 +9,10 @@
 [ext_resource type="Script" uid="uid://bm63j52e3mdkt" path="res://Scripts/CameraStates/cameraFlipper.gd" id="7_d1ilt"]
 [ext_resource type="Script" uid="uid://bli7qmkpm0s63" path="res://Scripts/CameraStates/cameraTable.gd" id="8_6iyac"]
 [ext_resource type="Script" uid="uid://ilxqhhgvqrcy" path="res://Scripts/CameraStates/cameraTelephone.gd" id="9_fdnlq"]
+[ext_resource type="Script" uid="uid://bctgtleqt2ey1" path="res://Scripts/GameState/ChooseState.gd" id="10_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/scoreLabel.tscn" id="10_hptm8"]
+[ext_resource type="Script" uid="uid://cf3lgb31nvs7j" path="res://Scripts/GameState/WalkState.gd" id="11_6iyac"]
+[ext_resource type="Script" uid="uid://c8yesvmagcaur" path="res://Scripts/GameState/state_machine_choose.gd" id="11_fdnlq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -77,11 +80,11 @@ shape = SubResource("BoxShape3D_ifpyu")
 [node name="TextInteractionBox" parent="." unique_id=743646626 instance=ExtResource("4_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5.5)
 
-[node name="stateMachine" type="Node" parent="." unique_id=129147187 node_paths=PackedStringArray("initalState")]
+[node name="stateMachineCam" type="Node" parent="." unique_id=129147187 node_paths=PackedStringArray("initalState")]
 script = ExtResource("5_ynf5e")
 initalState = NodePath("cameraFree")
 
-[node name="cameraFree" type="Node" parent="stateMachine" unique_id=916102461 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraFree" type="Node" parent="stateMachineCam" unique_id=916102461 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
 script = ExtResource("6_hptm8")
 FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
@@ -89,7 +92,7 @@ TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
 metadata/_custom_type_script = "uid://d4ijq1ex26kri"
 
-[node name="cameraFlipper" type="Node" parent="stateMachine" unique_id=1164108836 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraFlipper" type="Node" parent="stateMachineCam" unique_id=1164108836 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
 script = ExtResource("7_d1ilt")
 FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
@@ -97,7 +100,7 @@ TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
 metadata/_custom_type_script = "uid://bm63j52e3mdkt"
 
-[node name="cameraTable" type="Node" parent="stateMachine" unique_id=1489646435 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraTable" type="Node" parent="stateMachineCam" unique_id=1489646435 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
 script = ExtResource("8_6iyac")
 FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
@@ -105,7 +108,7 @@ TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
 metadata/_custom_type_script = "uid://bli7qmkpm0s63"
 
-[node name="cameraTelephone" type="Node" parent="stateMachine" unique_id=1588299471 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraTelephone" type="Node" parent="stateMachineCam" unique_id=1588299471 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
 script = ExtResource("9_fdnlq")
 FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
@@ -124,3 +127,15 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.09
 
 [node name="CameraSwitching" type="Camera3D" parent="." unique_id=1076139143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09138632, 2.395126, 4.05078)
+
+[node name="StateMachineChoose" type="Node" parent="." unique_id=1092687821 node_paths=PackedStringArray("initalState")]
+script = ExtResource("11_fdnlq")
+initalState = NodePath("WalkState")
+
+[node name="ChooseState" type="Node" parent="StateMachineChoose" unique_id=1765856135]
+script = ExtResource("10_d1ilt")
+metadata/_custom_type_script = "uid://bctgtleqt2ey1"
+
+[node name="WalkState" type="Node" parent="StateMachineChoose" unique_id=1112824895]
+script = ExtResource("11_6iyac")
+metadata/_custom_type_script = "uid://cf3lgb31nvs7j"

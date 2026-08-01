@@ -1,6 +1,7 @@
-extends State
+extends GameState
 class_name WalkState
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("testInput"):
-		Transitioned.emit(self, "chooseState")
+func _process(delta: float) -> void:
+	if active:
+		if Input.is_action_pressed("testInput"):
+			Transitioned.emit(self, "chooseState")
