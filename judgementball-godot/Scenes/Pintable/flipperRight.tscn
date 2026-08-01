@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dfjlttjo74wq0"]
+
+[ext_resource type="Script" uid="uid://npkumt4xsu5j" path="res://Scripts/flipper_right.gd" id="1_enudd"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_8jb5s"]
+size = Vector3(0.15, 0.48, 0.15)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ynaqo"]
+points = PackedVector3Array(-0.075, -0.24, -0.075, -0.075, -0.24, 0.075, 0, 0.24000002, -0.075, 0.075, -0.24, -0.075, 0.075, -0.24, 0.075, 0, 0.24000002, 0.075)
+
+[node name="flipperRight" type="CharacterBody3D" unique_id=1636917743 node_paths=PackedStringArray("mesh")]
+script = ExtResource("1_enudd")
+mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1167913518]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.192)
+mesh = SubResource("PrismMesh_8jb5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1851616298]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.192)
+shape = SubResource("ConvexPolygonShape3D_ynaqo")
