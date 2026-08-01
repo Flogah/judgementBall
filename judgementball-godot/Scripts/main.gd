@@ -4,8 +4,11 @@ extends Node3D
 @export var papers: Array[StaticBody3D]
 
 func _ready() -> void:
+	var x = 0
 	for paper in papers:
-		paper.visible = false
+		if x >= Global.clues:
+			paper.visible = false
+		x += 1
 	Global.connect("updateClues", makePaperVisible)
 
 func makePaperVisible():
