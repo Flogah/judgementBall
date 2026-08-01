@@ -8,3 +8,6 @@ signal changeFlipperLength
 signal hitBumper
 
 signal openPaper(text: String)
+
+var clues: int = 0
+signal updateClues
