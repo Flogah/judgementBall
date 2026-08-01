@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("leftClick"):
+	if Input.is_action_pressed("interact"):
 		if rotation_degrees.y < 20: 
 			rotate(Vector3.UP, 10*delta)
 	elif rotation_degrees.y >= curRot:

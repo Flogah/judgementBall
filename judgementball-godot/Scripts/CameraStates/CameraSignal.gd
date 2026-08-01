@@ -5,4 +5,4 @@ signal changeToFree
 signal changeToTelephone
 signal changeToFlipper
 
-var currentState : String
+var currentState : String = "Free"
