@@ -6,9 +6,9 @@ func _process(delta: float) -> void:
 
 
 func _on_buttons_button_up() -> void:
-	print("schuldig")
 	Global.finishChoose.emit()
 	Global.clues = 0
+	Global.clueScore = 0
 	Global.hidePapers.emit()
 	Global.changeScore.emit(-Global.score)
 	if Global.currentCase < Global.cases.size()-1:
@@ -16,10 +16,10 @@ func _on_buttons_button_up() -> void:
 
 
 func _on_buttonu_button_up() -> void:
-	print("unschuldig")
 	Global.finishChoose.emit()
 	Global.clues = 0
 	Global.hidePapers.emit()
+	Global.clueScore = 0
 	Global.changeScore.emit(-Global.score)
 	if Global.currentCase < Global.cases.size()-1:
 		Global.currentCase += 1

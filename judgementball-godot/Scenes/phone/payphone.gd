@@ -10,7 +10,6 @@ var tween : Tween
 var phoneActive: bool = false
 	
 func interact():
-	CameraSignal.changeToTelephone.emit()
 	if !phoneActive:
 		if tween:
 			tween.kill()
@@ -25,7 +24,6 @@ func interact():
 			transition_duration
 		)
 		phoneActive = true
-		tween.finished.connect(func(): Global.pickUpPhone.emit())
 
 
 func _on_telefonate_finished() -> void:
@@ -42,4 +40,3 @@ func _on_telefonate_finished() -> void:
 		transition_duration
 		)
 	phoneActive = false
-	tween.finished.connect(func(): CameraSignal.changeToFree.emit())

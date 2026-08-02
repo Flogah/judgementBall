@@ -140,37 +140,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.878, -0.212, 0)
 script = ExtResource("12_0tv2a")
 initalState = NodePath("cameraFree")
 
-[node name="cameraFree" type="Node" parent="stateMachineCam" unique_id=83376820 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraFree" type="Node" parent="stateMachineCam" unique_id=83376820 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
 script = ExtResource("13_b8klh")
 FlipCam = NodePath("../../CameraFlipper")
-TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraWaage")
 SwitchCam = NodePath("../../CameraSwitching")
 transition_duration = 1.0
 metadata/_custom_type_script = "uid://d4ijq1ex26kri"
 
-[node name="cameraFlipper" type="Node" parent="stateMachineCam" unique_id=1737159273 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraFlipper" type="Node" parent="stateMachineCam" unique_id=1737159273 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
 script = ExtResource("14_rp6s2")
 FlipCam = NodePath("../../CameraFlipper")
-TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraWaage")
 SwitchCam = NodePath("../../CameraSwitching")
 transition_duration = 1.0
 metadata/_custom_type_script = "uid://bm63j52e3mdkt"
 
-[node name="cameraTable" type="Node" parent="stateMachineCam" unique_id=393473408 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraTable" type="Node" parent="stateMachineCam" unique_id=393473408 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
 script = ExtResource("15_jc8dp")
 FlipCam = NodePath("../../CameraFlipper")
-TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraWaage")
 SwitchCam = NodePath("../../CameraSwitching")
 transition_duration = 1.0
 metadata/_custom_type_script = "uid://bli7qmkpm0s63"
 
-[node name="cameraTelephone" type="Node" parent="stateMachineCam" unique_id=780273181 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
+[node name="cameraTelephone" type="Node" parent="stateMachineCam" unique_id=780273181 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
 script = ExtResource("16_b2165")
 FlipCam = NodePath("../../CameraFlipper")
-TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraWaage")
 SwitchCam = NodePath("../../CameraSwitching")
 transition_duration = 1.0
