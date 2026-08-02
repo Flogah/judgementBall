@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b5h0gwa8f1a4n"]
+
+[ext_resource type="Script" uid="uid://dy0hkqrwbruhh" path="res://Scripts/papier.gd" id="1_3tvgc"]
+[ext_resource type="ArrayMesh" uid="uid://8enbjnxjfp1" path="res://Assets/Models/paper.obj" id="2_4q881"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8c6f"]
+size = Vector3(0.64746094, 0.10058594, 0.4494629)
+
+[node name="papier2" type="StaticBody3D" unique_id=1856689456 node_paths=PackedStringArray("highlight_model")]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_3tvgc")
+highlight_model = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2059480965]
+mesh = ExtResource("2_4q881")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1931167706]
+shape = SubResource("BoxShape3D_y8c6f")
