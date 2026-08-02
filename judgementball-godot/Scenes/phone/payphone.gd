@@ -11,23 +11,29 @@ var phoneActive: bool = false
 	
 func interact():
 	if !phoneActive:
-		if tween:
-			tween.kill()
-		tween = create_tween().set_parallel(true)
-		tween.set_trans(Tween.TRANS_CUBIC) 
-		tween.set_ease(Tween.EASE_IN_OUT)
+		abheben()
 
-		tween.tween_property(
-			handle, 
-			"global_transform", 
-			handlePosActive.global_transform, 
-			transition_duration
-		)
-		phoneActive = true
-		tween.finished.connect(func(): Global.pickUpPhone.emit())
 
+func abheben():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_parallel(true)
+	tween.set_trans(Tween.TRANS_CUBIC) 
+	tween.set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property(
+		handle, 
+		"global_transform", 
+		handlePosActive.global_transform, 
+		transition_duration
+	)
+	phoneActive = true
+	tween.finished.connect(func(): Global.pickUpPhone.emit())
 
 func _on_telefonate_finished() -> void:
+	auflegen()
+	
+func auflegen():
 	if tween:
 		tween.kill()
 	tween = create_tween().set_parallel(true)

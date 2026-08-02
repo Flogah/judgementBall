@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://c8yesvmagcaur" path="res://Scripts/GameState/state_machine_choose.gd" id="17_jc8dp"]
 [ext_resource type="Script" uid="uid://bctgtleqt2ey1" path="res://Scripts/GameState/ChooseState.gd" id="18_b2165"]
 [ext_resource type="Script" uid="uid://cf3lgb31nvs7j" path="res://Scripts/GameState/WalkState.gd" id="19_quje0"]
+[ext_resource type="Script" uid="uid://vwoax3j6tlda" path="res://Scripts/GameState/PhoneStates/PhoneStateIntro.gd" id="20_b2165"]
+[ext_resource type="Script" uid="uid://wshynwvmwotl" path="res://Scripts/GameState/PhoneStates/PhoneStateRandom.gd" id="21_quje0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfrpb"]
 albedo_texture = ExtResource("2_6mpvv")
@@ -195,3 +197,16 @@ metadata/_custom_type_script = "uid://bctgtleqt2ey1"
 [node name="WalkState" type="Node" parent="StateMachineChoose" unique_id=54400982]
 script = ExtResource("19_quje0")
 metadata/_custom_type_script = "uid://cf3lgb31nvs7j"
+
+[node name="StateMachinePhone" type="Node" parent="." unique_id=1823244100 node_paths=PackedStringArray("initalState")]
+script = ExtResource("17_jc8dp")
+initalState = NodePath("PhoneStateIntro")
+metadata/_custom_type_script = "uid://c8yesvmagcaur"
+
+[node name="PhoneStateIntro" type="Node" parent="StateMachinePhone" unique_id=836208855]
+script = ExtResource("20_b2165")
+metadata/_custom_type_script = "uid://vwoax3j6tlda"
+
+[node name="PhoneStateRandom" type="Node" parent="StateMachinePhone" unique_id=2100930770]
+script = ExtResource("21_quje0")
+metadata/_custom_type_script = "uid://wshynwvmwotl"

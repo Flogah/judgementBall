@@ -1,6 +1,7 @@
 extends Node
 
 var gameState : String = "Walk"
+var phoneState:String = "Random"
 
 var score : float = 0
 signal changeScore(addScore: float)

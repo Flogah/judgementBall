@@ -4,8 +4,7 @@ class_name cameraTable
 func _ready() -> void:
 	Global.connect("finishChoose", changeFree)
 
-func Enter():
-	CameraSignal.currentState = "Table"
+Transitioned.emit(self, "ChooseState")
 	changeCamera(TableCam)
 
 func _process(delta: float) -> void:
