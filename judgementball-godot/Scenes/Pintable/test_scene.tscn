@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vsyhy14hl6gr"]
 
 [ext_resource type="PackedScene" uid="uid://bxuf6ssvaw8dx" path="res://Scenes/Pintable/pintable.tscn" id="1_4x2ey"]
-[ext_resource type="PackedScene" uid="uid://brr7tarbm1avr" path="res://Scenes/Pintable/ball.tscn" id="2_y4eu1"]
+[ext_resource type="Script" uid="uid://c6tpqj1vrnloh" path="res://Scripts/test_scene.gd" id="1_udw6g"]
 [ext_resource type="PackedScene" uid="uid://vwa743w80ls5" path="res://Scenes/Pintable/flipperLeft.tscn" id="3_y4eu1"]
 [ext_resource type="PackedScene" uid="uid://dfjlttjo74wq0" path="res://Scenes/Pintable/flipperRight.tscn" id="4_vqxl3"]
 [ext_resource type="PackedScene" uid="uid://bmuvpqjsd7gdm" path="res://Scenes/Pintable/score_area.tscn" id="5_0qhok"]
@@ -15,11 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://b382xi83dpsl5" path="res://Assets/Sounds/Flip_hoch.wav" id="13_udw6g"]
 [ext_resource type="AudioStream" uid="uid://bnumgaeccns4m" path="res://Assets/Sounds/Flip_runter.wav" id="14_8i7r5"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqxl3"]
-friction = 0.35
-bounce = 0.5
-
 [node name="testScene" type="Node3D" unique_id=1670743855]
+script = ExtResource("1_udw6g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=158129892]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -28,13 +25,6 @@ shadow_enabled = true
 [node name="pintable" parent="." unique_id=1671433881 instance=ExtResource("1_4x2ey")]
 transform = Transform3D(0.9948342, 0.101513095, 0, -0.101513095, 0.9948342, 0, 0, 0, 1, 0, 0.19284809, 0)
 
-[node name="ball" parent="." unique_id=1940181704 instance=ExtResource("2_y4eu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55697644, 0.7404728, 0.36410472)
-physics_material_override = SubResource("PhysicsMaterial_vqxl3")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=929813964]
-transform = Transform3D(-3.466992e-08, -0.6090194, 0.7931553, -2.6621086e-08, 0.7931553, 0.6090194, -1, -1.7763568e-15, -4.371139e-08, 1.7030096, 1.5128641, 0)
-
 [node name="flipperLeft" parent="." unique_id=1636917743 instance=ExtResource("3_y4eu1")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0.9383892, 0.25200176, 0.50576043)
 
@@ -42,7 +32,7 @@ transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0.938389
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0.938643, 0.25209284, -0.506)
 
 [node name="scoreArea" parent="." unique_id=1687520017 instance=ExtResource("5_0qhok")]
-transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0.816, 0.177, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3203155, -0.14841853, 0)
 
 [node name="bumper" parent="." unique_id=1890445088 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.32, 0)
@@ -51,10 +41,12 @@ audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper3" parent="." unique_id=689794937 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9121094, 0.37065917, -0.49533844)
+points = 15.0
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper2" parent="." unique_id=503641605 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9108887, 0.3923877, 0.4698372)
+points = 15.0
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper4" parent="." unique_id=2031501024 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
