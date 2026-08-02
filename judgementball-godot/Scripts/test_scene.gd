@@ -4,12 +4,15 @@ extends Node3D
 var active = false
 var pinball = preload("res://Scenes/Pintable/ball.tscn")
 @onready var chooseUI: Control = $Choose
+@onready var spawn : Node3D = $spanPoint
 
 func _ready() -> void:
 	chooseUI.visible = false
 	CameraSignal.connect("changeToFlipper", setActive)
 	CameraSignal.connect("changeToFree", setActive)
+	CameraSignal.connect("changeToTable", setActive)
 	Global.connect("setFlipperActive", setActive)
+	
 
 func _process(delta: float) -> void:
 	if active && Global.gameState == "Walk":
@@ -17,7 +20,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("testInput") && !ball:
 			var activeBall = pinball.instantiate()
 			add_child(activeBall)
-			activeBall.transform.origin = Vector3(-0.7, 0.6, -0.2)
+			activeBall.transform.origin = spawn.transform.origin
 		ball = get_tree().get_nodes_in_group("ball")
 	if active && Global.gameState == "Choose":
 		chooseUI.visible = true

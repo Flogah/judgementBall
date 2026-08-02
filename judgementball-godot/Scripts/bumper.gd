@@ -5,8 +5,8 @@ extends StaticBody3D
 @export var audioPlayer: AudioStreamPlayer3D
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	mesh.mesh.top_radius = 0.7
-	mesh.mesh.bottom_radius = 0.7
+	mesh.scale.x = 1.3
+	mesh.scale.z = 1.3
 	Global.changeScore.emit(points)
 	Global.hitBumper.emit()
 	
@@ -14,5 +14,5 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
-	mesh.mesh.top_radius = 0.5
-	mesh.mesh.bottom_radius = 0.5
+	mesh.scale.x = 1
+	mesh.scale.z = 1

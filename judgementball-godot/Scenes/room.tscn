@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c33036di875o0"]
 
 [ext_resource type="PackedScene" uid="uid://djt1ml63dul1x" path="res://Scenes/wall.tscn" id="1_fr46g"]
+[ext_resource type="Script" uid="uid://v2ur6k4goxu4" path="res://Scripts/main.gd" id="1_ojh4s"]
 [ext_resource type="Texture2D" uid="uid://bggjk3kfqt8qr" path="res://Assets/Textures/walls.png" id="2_6mpvv"]
 [ext_resource type="PackedScene" uid="uid://pc7it30eng54" path="res://Scenes/player.tscn" id="3_gkney"]
 [ext_resource type="PackedScene" uid="uid://de5y5ca14crq2" path="res://Scenes/door.tscn" id="3_nfrpb"]
@@ -9,6 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://4klxlewqe71s" path="res://Scenes/phone/payphone.tscn" id="6_4gp0m"]
 [ext_resource type="PackedScene" uid="uid://ji36x1atyioo" path="res://Scenes/table.tscn" id="7_phao3"]
 [ext_resource type="PackedScene" uid="uid://b5h0gwa8f1a4n" path="res://Scenes/papier.tscn" id="8_phao3"]
+[ext_resource type="PackedScene" uid="uid://vsyhy14hl6gr" path="res://Scenes/Pintable/flipperganz.tscn" id="10_ilpkg"]
+[ext_resource type="Script" uid="uid://c4bgr7vps4lnm" path="res://Scripts/CameraStates/state_machine.gd" id="12_0tv2a"]
+[ext_resource type="Script" uid="uid://d4ijq1ex26kri" path="res://Scripts/CameraStates/cameraFree.gd" id="13_b8klh"]
+[ext_resource type="Script" uid="uid://bm63j52e3mdkt" path="res://Scripts/CameraStates/cameraFlipper.gd" id="14_rp6s2"]
+[ext_resource type="Script" uid="uid://bli7qmkpm0s63" path="res://Scripts/CameraStates/cameraTable.gd" id="15_jc8dp"]
+[ext_resource type="Script" uid="uid://ilxqhhgvqrcy" path="res://Scripts/CameraStates/cameraTelephone.gd" id="16_b2165"]
+[ext_resource type="Script" uid="uid://c8yesvmagcaur" path="res://Scripts/GameState/state_machine_choose.gd" id="17_jc8dp"]
+[ext_resource type="Script" uid="uid://bctgtleqt2ey1" path="res://Scripts/GameState/ChooseState.gd" id="18_b2165"]
+[ext_resource type="Script" uid="uid://cf3lgb31nvs7j" path="res://Scripts/GameState/WalkState.gd" id="19_quje0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfrpb"]
 albedo_texture = ExtResource("2_6mpvv")
@@ -35,7 +45,9 @@ size = Vector2(2, 4)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ifpyu"]
 
-[node name="Room" type="Node3D" unique_id=309765072]
+[node name="Room" type="Node3D" unique_id=309765072 node_paths=PackedStringArray("papers")]
+script = ExtResource("1_ojh4s")
+papers = [NodePath("Table/papier2"), NodePath("Table/papier3"), NodePath("Table/papier4"), NodePath("Table/papier5"), NodePath("Table/papier6")]
 
 [node name="Walls" type="Node3D" parent="." unique_id=136536441]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -120,3 +132,66 @@ clueNbr = 4
 [node name="papier6" parent="Table" unique_id=1495837911 instance=ExtResource("8_phao3")]
 transform = Transform3D(1.1467844, 0, -0.35339034, 0, 1.1999996, 0, 0.35339034, 0, 1.1467844, 0.08121586, 1.5063453, 1.121825)
 clueNbr = 5
+
+[node name="flipperGanz" parent="." unique_id=1670743855 instance=ExtResource("10_ilpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.878, -0.212, 0)
+
+[node name="stateMachineCam" type="Node" parent="." unique_id=693866766 node_paths=PackedStringArray("initalState")]
+script = ExtResource("12_0tv2a")
+initalState = NodePath("cameraFree")
+
+[node name="cameraFree" type="Node" parent="stateMachineCam" unique_id=83376820 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
+script = ExtResource("13_b8klh")
+FlipCam = NodePath("../../CameraFlipper")
+TableCam = NodePath("../../CameraWaage")
+SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
+metadata/_custom_type_script = "uid://d4ijq1ex26kri"
+
+[node name="cameraFlipper" type="Node" parent="stateMachineCam" unique_id=1737159273 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
+script = ExtResource("14_rp6s2")
+FlipCam = NodePath("../../CameraFlipper")
+TableCam = NodePath("../../CameraWaage")
+SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
+metadata/_custom_type_script = "uid://bm63j52e3mdkt"
+
+[node name="cameraTable" type="Node" parent="stateMachineCam" unique_id=393473408 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
+script = ExtResource("15_jc8dp")
+FlipCam = NodePath("../../CameraFlipper")
+TableCam = NodePath("../../CameraWaage")
+SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
+metadata/_custom_type_script = "uid://bli7qmkpm0s63"
+
+[node name="cameraTelephone" type="Node" parent="stateMachineCam" unique_id=780273181 node_paths=PackedStringArray("FlipCam", "TableCam", "SwitchCam")]
+script = ExtResource("16_b2165")
+FlipCam = NodePath("../../CameraFlipper")
+TableCam = NodePath("../../CameraWaage")
+SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
+metadata/_custom_type_script = "uid://ilxqhhgvqrcy"
+
+[node name="CameraFlipper" type="Camera3D" parent="." unique_id=1815619071]
+transform = Transform3D(-4.2095326e-08, -0.91755754, 0.3976031, 1.177574e-08, 0.3976031, 0.91755754, -1, 4.3306954e-08, -5.9323124e-09, -2.3350587, 1.747416, 0)
+
+[node name="CameraWaage" type="Camera3D" parent="." unique_id=2058039204]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.678897, 1.3903861, 0)
+
+[node name="CameraTelephone" type="Camera3D" parent="." unique_id=811147729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.699)
+
+[node name="CameraSwitching" type="Camera3D" parent="." unique_id=1940427327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09138632, 2.395126, 4.05078)
+
+[node name="StateMachineChoose" type="Node" parent="." unique_id=1599738392 node_paths=PackedStringArray("initalState")]
+script = ExtResource("17_jc8dp")
+initalState = NodePath("WalkState")
+
+[node name="ChooseState" type="Node" parent="StateMachineChoose" unique_id=1497442718]
+script = ExtResource("18_b2165")
+metadata/_custom_type_script = "uid://bctgtleqt2ey1"
+
+[node name="WalkState" type="Node" parent="StateMachineChoose" unique_id=54400982]
+script = ExtResource("19_quje0")
+metadata/_custom_type_script = "uid://cf3lgb31nvs7j"

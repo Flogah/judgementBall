@@ -1,4 +1,7 @@
 extends Interactable
 
 func interact():
-	CameraSignal.changeToFlipper.emit()
+	if Global.gameState == "Walk":
+		CameraSignal.changeToFlipper.emit()
+	elif Global.gameState == "Choose":
+		CameraSignal.changeToTable.emit()

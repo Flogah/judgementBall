@@ -8,6 +8,8 @@ signal changeScore(addScore: float)
 signal changeFlipperLength
 signal hitBumper
 
+var clueScore: float = 0
+
 signal flipperUp
 signal flipperDown
 
