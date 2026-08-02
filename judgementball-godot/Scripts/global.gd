@@ -16,6 +16,7 @@ signal finishChoose
 signal setFlipperActive
 
 signal openPaper(text: String)
+signal hidePapers
 
 var clues: int = 0
 signal updateClues
