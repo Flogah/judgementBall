@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://citvkh0iwdlx2"
+uid="uid://b382xi83dpsl5"
 path="res://.godot/imported/Flip_hoch.wav-a28b124ae18b351c03c28f8b2713dc06.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=1
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=2

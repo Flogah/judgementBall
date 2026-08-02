@@ -2,6 +2,7 @@ extends Interactable
 
 @onready var mesh_instance_3d: MeshInstance3D = %MeshInstance3D
 @onready var spot_light_3d: SpotLight3D = %SpotLight3D
+@onready var collisionShp: CollisionShape3D = $CollisionShape3D
 @export var clueNbr : int = 1
 
 var active:bool = false:

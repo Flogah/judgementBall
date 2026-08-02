@@ -11,11 +11,11 @@
 [ext_resource type="Script" uid="uid://bli7qmkpm0s63" path="res://Scripts/CameraStates/cameraTable.gd" id="8_6iyac"]
 [ext_resource type="Script" uid="uid://ilxqhhgvqrcy" path="res://Scripts/CameraStates/cameraTelephone.gd" id="9_fdnlq"]
 [ext_resource type="Script" uid="uid://dy0hkqrwbruhh" path="res://Scripts/papier.gd" id="10_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://bqrkd7qprepeq" path="res://Scenes/scoreLabel.tscn" id="10_hptm8"]
 [ext_resource type="Script" uid="uid://cf3lgb31nvs7j" path="res://Scripts/GameState/WalkState.gd" id="11_6iyac"]
 [ext_resource type="Texture2D" uid="uid://byefgb30vleis" path="res://Assets/KenneyProtoTextures/Light/texture_01.png" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://c8yesvmagcaur" path="res://Scripts/GameState/state_machine_choose.gd" id="11_fdnlq"]
 [ext_resource type="Script" uid="uid://bctgtleqt2ey1" path="res://Scripts/GameState/ChooseState.gd" id="13_k12tt"]
+[ext_resource type="PackedScene" uid="uid://vsyhy14hl6gr" path="res://Scenes/Pintable/test_scene.tscn" id="16_k12tt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -62,8 +62,6 @@ points = PackedVector3Array(-1, 0, -0.6425, -1, 0, 0.6423742, 1, 0, -0.6425, 1, 
 script = ExtResource("1_6iyac")
 papers = [NodePath("papier1"), NodePath("papier2"), NodePath("papier3"), NodePath("papier4"), NodePath("papier5")]
 
-[node name="score" parent="." unique_id=1612659804 instance=ExtResource("10_hptm8")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1142684316]
 environment = SubResource("Environment_jjvhh")
 
@@ -105,6 +103,7 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
 metadata/_custom_type_script = "uid://d4ijq1ex26kri"
 
 [node name="cameraFlipper" type="Node" parent="stateMachineCam" unique_id=1164108836 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
@@ -113,6 +112,7 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
 metadata/_custom_type_script = "uid://bm63j52e3mdkt"
 
 [node name="cameraTable" type="Node" parent="stateMachineCam" unique_id=1489646435 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
@@ -121,6 +121,7 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
 metadata/_custom_type_script = "uid://bli7qmkpm0s63"
 
 [node name="cameraTelephone" type="Node" parent="stateMachineCam" unique_id=1588299471 node_paths=PackedStringArray("FlipCam", "TelCam", "TableCam", "SwitchCam")]
@@ -129,10 +130,11 @@ FlipCam = NodePath("../../CameraFlipper")
 TelCam = NodePath("../../CameraTelephone")
 TableCam = NodePath("../../CameraTable")
 SwitchCam = NodePath("../../CameraSwitching")
+transition_duration = 1.0
 metadata/_custom_type_script = "uid://ilxqhhgvqrcy"
 
 [node name="CameraFlipper" type="Camera3D" parent="." unique_id=1552814639]
-transform = Transform3D(-4.043148e-08, 0.38005358, -0.9249645, 1.661267e-08, 0.9249645, 0.38005358, 1, 0, -4.371139e-08, 4.288805, 2.395126, 0)
+transform = Transform3D(-1, 3.3173116e-08, -8.0884405e-08, -3.7340016e-08, 0.67449665, 0.7382779, 7.904724e-08, 0.7382779, -0.67449665, -0.12578797, 2.853182, 3.947915)
 
 [node name="CameraTable" type="Camera3D" parent="." unique_id=479690664]
 transform = Transform3D(-1.6557772e-08, -0.92547953, 0.37879768, -4.0453994e-08, 0.37879768, 0.92547953, -1, 0, -4.371139e-08, -3.2025824, 2.395126, 0)
@@ -270,3 +272,6 @@ visible = false
 light_energy = 5.0
 spot_range = 6.5
 spot_angle = 30.882586
+
+[node name="testScene" parent="." unique_id=1670743855 instance=ExtResource("16_k12tt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.13906682, 1.3660254, 5.2849736)
