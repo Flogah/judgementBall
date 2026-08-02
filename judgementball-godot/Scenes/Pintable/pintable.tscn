@@ -86,3 +86,4 @@ shape = SubResource("ConvexPolygonShape3D_x2ejj")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=78924543]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021728085, 0.21293649, 0)
 shape = SubResource("BoxShape3D_8jb5s")
+disabled = true

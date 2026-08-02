@@ -1,5 +1,6 @@
 extends Node
 
+var gameState : String = "Walk"
 
 var score : float = 0
 signal changeScore(addScore: float)
@@ -11,6 +12,8 @@ signal flipperUp
 signal flipperDown
 
 signal killBall
+signal finishChoose
+signal setFlipperActive
 
 signal openPaper(text: String)
 

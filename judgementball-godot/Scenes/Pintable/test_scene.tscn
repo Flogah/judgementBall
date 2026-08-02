@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bxaxvgx5kginf" path="res://Scripts/flipper_sounds.gd" id="12_43kjs"]
 [ext_resource type="AudioStream" uid="uid://b382xi83dpsl5" path="res://Assets/Sounds/Flip_hoch.wav" id="13_udw6g"]
 [ext_resource type="AudioStream" uid="uid://bnumgaeccns4m" path="res://Assets/Sounds/Flip_runter.wav" id="14_8i7r5"]
+[ext_resource type="PackedScene" uid="uid://cr5btjjgke0kr" path="res://Scenes/choose.tscn" id="15_8i7r5"]
 
 [node name="testScene" type="Node3D" unique_id=1670743855]
 script = ExtResource("1_udw6g")
@@ -36,25 +37,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6523563, 0.11992513, 0)
 
 [node name="bumper" parent="." unique_id=1890445088 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.32, 0)
+collision_mask = 9
 points = 5.0
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper3" parent="." unique_id=689794937 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9121094, 0.37065917, -0.49533844)
+collision_mask = 9
 points = 15.0
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper2" parent="." unique_id=503641605 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.9108887, 0.3923877, 0.4698372)
+collision_mask = 9
 points = 15.0
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper4" parent="." unique_id=2031501024 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.677124, 0.2200244, -0.49533844)
+collision_mask = 9
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="bumper5" parent="." unique_id=1401767096 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.6783447, 0.24175292, 0.4698372)
+collision_mask = 9
 audioPlayer = NodePath("../BumperSounds")
 
 [node name="UI" parent="." unique_id=112420969 instance=ExtResource("7_vbpn2")]
@@ -67,3 +73,5 @@ streams = Array[AudioStream]([ExtResource("8_q0i8k"), ExtResource("10_ltd7w"), E
 [node name="FlipperSounds" type="AudioStreamPlayer3D" parent="." unique_id=746246092]
 script = ExtResource("12_43kjs")
 streams = Array[AudioStream]([ExtResource("13_udw6g"), ExtResource("14_8i7r5")])
+
+[node name="Choose" parent="." unique_id=756200434 instance=ExtResource("15_8i7r5")]

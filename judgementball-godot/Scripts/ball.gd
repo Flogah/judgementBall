@@ -6,4 +6,5 @@ func _ready() -> void:
 	Global.connect("killBall", kill)
 
 func kill():
+	CameraSignal.changeToFree.emit()
 	queue_free()
