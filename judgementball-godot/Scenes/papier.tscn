@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy0hkqrwbruhh" path="res://Scripts/papier.gd" id="1_3tvgc"]
 [ext_resource type="ArrayMesh" uid="uid://8enbjnxjfp1" path="res://Assets/Models/paper.obj" id="2_4q881"]
+[ext_resource type="Material" uid="uid://bk2kax4jn4bs3" path="res://Assets/Materials/mat_paper.tres" id="2_nvwsj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y8c6f"]
 size = Vector3(0.64746094, 0.10058594, 0.4494629)
@@ -13,6 +14,7 @@ script = ExtResource("1_3tvgc")
 highlight_model = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2059480965]
+material_override = ExtResource("2_nvwsj")
 mesh = ExtResource("2_4q881")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1931167706]
