@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://c33036di875o0"]
+
+[ext_resource type="PackedScene" uid="uid://djt1ml63dul1x" path="res://Scenes/wall.tscn" id="1_fr46g"]
+[ext_resource type="Texture2D" uid="uid://bggjk3kfqt8qr" path="res://Assets/Textures/walls.png" id="2_6mpvv"]
+[ext_resource type="PackedScene" uid="uid://pc7it30eng54" path="res://Scenes/player.tscn" id="3_gkney"]
+[ext_resource type="PackedScene" uid="uid://de5y5ca14crq2" path="res://Scenes/door.tscn" id="3_nfrpb"]
+[ext_resource type="PackedScene" uid="uid://bddo4ugcgqxi6" path="res://Scenes/sky_with_eyes.tscn" id="4_6mpvv"]
+[ext_resource type="PackedScene" uid="uid://4klxlewqe71s" path="res://Scenes/payphone.tscn" id="6_4gp0m"]
+[ext_resource type="PackedScene" uid="uid://ji36x1atyioo" path="res://Scenes/table.tscn" id="7_phao3"]
+[ext_resource type="PackedScene" uid="uid://b5h0gwa8f1a4n" path="res://Scenes/papier.tscn" id="8_phao3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfrpb"]
+albedo_texture = ExtResource("2_6mpvv")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4gp0m"]
+material = SubResource("StandardMaterial3D_nfrpb")
+size = Vector2(4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ifpyu"]
+size = Vector3(4, 2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gp0m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ifpyu"]
+material = SubResource("StandardMaterial3D_4gp0m")
+size = Vector2(4, 2)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ifpyu"]
+
+[node name="Room" type="Node3D" unique_id=309765072]
+
+[node name="Walls" type="Node3D" parent="." unique_id=136536441]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Wall" parent="Walls" unique_id=389154579 instance=ExtResource("1_fr46g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Wall2" type="StaticBody3D" parent="Walls" unique_id=1122755376]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2" unique_id=262615141]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, 0)
+mesh = SubResource("PlaneMesh_4gp0m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2" unique_id=1906352892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.25)
+shape = SubResource("BoxShape3D_ifpyu")
+
+[node name="Wall3" parent="Walls" unique_id=1211683705 instance=ExtResource("1_fr46g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, -0.99999994)
+
+[node name="Wall4" parent="Walls" unique_id=329264187 instance=ExtResource("1_fr46g")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2, 0, -0.99999994)
+
+[node name="Floor" type="StaticBody3D" parent="Walls" unique_id=601455337]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Floor" unique_id=1027102165]
+mesh = SubResource("PlaneMesh_ifpyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Floor" unique_id=2055130706]
+shape = SubResource("WorldBoundaryShape3D_ifpyu")
+
+[node name="Door" parent="Walls" unique_id=1788368620 instance=ExtResource("3_nfrpb")]
+transform = Transform3D(-1.3113416e-08, 0, 0.29999998, 0, 0.29999998, 0, -0.29999998, 0, -1.3113416e-08, 0.9752264, 0, -1)
+
+[node name="Player" parent="." unique_id=2142742757 instance=ExtResource("3_gkney")]
+
+[node name="Lights" type="Node3D" parent="." unique_id=807886394]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights" unique_id=547190552]
+transform = Transform3D(-3.7855173e-08, -1, -2.1855692e-08, 0.5, -3.7855173e-08, 0.8660254, -0.8660254, 2.1855694e-08, 0.5, 0.30965292, 4.5638146, 0.06506634)
+light_color = Color(0.820766, 0.934947, 0.43079695, 1)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 6.769032
+spot_angle = 34.302635
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=825194868]
+transform = Transform3D(0.8660254, 2.1855694e-08, -0.5, 0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 0.30965292, 4.5638146, 0.06506634)
+light_color = Color(0.8059798, 0.8692655, 0.7491399, 1)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 6.769032
+spot_angle = 34.302635
+
+[node name="SkyWithEyes" parent="." unique_id=1803350455 instance=ExtResource("4_6mpvv")]
+visible = false
+
+[node name="Payphone" parent="." unique_id=1673303800 instance=ExtResource("6_4gp0m")]
+transform = Transform3D(0, 0, -0.39999998, 0, 0.4, 0, 0.39999998, 0, 0, 0, 1.5, -2)
+
+[node name="Table" parent="." unique_id=429302748 instance=ExtResource("7_phao3")]
+transform = Transform3D(0.6999999, 0, 2.9802322e-08, 0, 0.70000005, 0, -2.9802322e-08, 0, 0.6999999, 3.2262168, 0, 0.5)
+
+[node name="papier2" parent="Table" unique_id=1856689456 instance=ExtResource("8_phao3")]
+transform = Transform3D(1.1456463, 0, 0.35706377, 0, 1.1999999, 0, -0.35706377, 0, 1.1456463, -0.046308517, 1.5063453, -0.97250456)
+
+[node name="papier3" parent="Table" unique_id=1866536186 instance=ExtResource("8_phao3")]
+transform = Transform3D(1.1997759, 0, -0.023177212, 0, 1.1999999, 0, 0.023177212, 0, 1.1997759, -0.31947422, 1.5063453, -0.350649)
+clueNbr = 2
+
+[node name="papier4" parent="Table" unique_id=712574613 instance=ExtResource("8_phao3")]
+transform = Transform3D(1.1922128, 0, 0.13648295, 0, 1.1999996, 0, -0.13648295, 0, 1.1922128, 0.35730314, 1.5063453, 0.17385012)
+clueNbr = 3
+
+[node name="papier5" parent="Table" unique_id=287493582 instance=ExtResource("8_phao3")]
+transform = Transform3D(1.1974226, 0, -0.07860217, 0, 1.1999999, 0, 0.07860217, 0, 1.1974226, -0.438529, 1.5063453, 0.4592136)
+clueNbr = 4
+
+[node name="papier6" parent="Table" unique_id=1495837911 instance=ExtResource("8_phao3")]
+transform = Transform3D(1.1467844, 0, -0.35339034, 0, 1.1999996, 0, 0.35339034, 0, 1.1467844, 0.08121586, 1.5063453, 1.121825)
+clueNbr = 5
