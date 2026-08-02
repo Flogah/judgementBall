@@ -12,9 +12,10 @@
 [ext_resource type="Script" uid="uid://ilxqhhgvqrcy" path="res://Scripts/CameraStates/cameraTelephone.gd" id="9_fdnlq"]
 [ext_resource type="Script" uid="uid://dy0hkqrwbruhh" path="res://Scripts/papier.gd" id="10_d1ilt"]
 [ext_resource type="Script" uid="uid://cf3lgb31nvs7j" path="res://Scripts/GameState/WalkState.gd" id="11_6iyac"]
-[ext_resource type="Texture2D" uid="uid://byefgb30vleis" path="res://Assets/KenneyProtoTextures/Light/texture_01.png" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://c8yesvmagcaur" path="res://Scripts/GameState/state_machine_choose.gd" id="11_fdnlq"]
 [ext_resource type="Script" uid="uid://bctgtleqt2ey1" path="res://Scripts/GameState/ChooseState.gd" id="13_k12tt"]
+[ext_resource type="Texture2D" uid="uid://cjq5ngpffsfax" path="res://Assets/Textures/brief2.png" id="16_h1bgf"]
+[ext_resource type="ArrayMesh" uid="uid://8enbjnxjfp1" path="res://Assets/Models/paper.obj" id="17_b3802"]
 [ext_resource type="PackedScene" uid="uid://vsyhy14hl6gr" path="res://Scenes/Pintable/test_scene.tscn" id="16_k12tt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
@@ -49,7 +50,7 @@ material = SubResource("StandardMaterial3D_jjgbg")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ifpyu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iyac"]
-albedo_texture = ExtResource("11_d1ilt")
+albedo_texture = ExtResource("16_h1bgf")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5klak"]
 material = SubResource("StandardMaterial3D_6iyac")
@@ -57,6 +58,9 @@ size = Vector2(2, 1.285)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdnlq"]
 points = PackedVector3Array(-1, 0, -0.6425, -1, 0, 0.6423742, 1, 0, -0.6425, 1, 0, 0.6423742)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8c6f"]
+size = Vector3(0.64746094, 0.10058594, 0.4494629)
 
 [node name="Main" type="Node3D" unique_id=727934956 node_paths=PackedStringArray("papers")]
 script = ExtResource("1_6iyac")
@@ -182,7 +186,6 @@ spot_range = 6.5
 spot_angle = 30.882586
 
 [node name="papier2" type="StaticBody3D" parent="." unique_id=1068687010 node_paths=PackedStringArray("highlight_model")]
-transform = Transform3D(0.8853736, 0.46488026, 0, -0.46488026, 0.8853736, 0, 0, 0, 1, -5.7648053, 0.7743497, 1.5118856)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("10_d1ilt")
@@ -190,12 +193,10 @@ clueNbr = 2
 highlight_model = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="papier2" unique_id=4442539]
-transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
-mesh = SubResource("PlaneMesh_5klak")
+mesh = ExtResource("17_b3802")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="papier2" unique_id=17388913]
-transform = Transform3D(0.8003503, 0.5995327, 0, -0.5995327, 0.8003503, 0, 0, 0, 1, 0, 0.49999988, 0)
-shape = SubResource("ConvexPolygonShape3D_fdnlq")
+shape = SubResource("BoxShape3D_y8c6f")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="papier2" unique_id=1141567869]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
