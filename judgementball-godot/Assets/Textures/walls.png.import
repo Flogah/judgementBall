@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c423fdvaftfbf"
-path.s3tc="res://.godot/imported/texture_01.png-ddd7b5168c1f5353540a770486e03f40.s3tc.ctex"
+uid="uid://bggjk3kfqt8qr"
+path.s3tc="res://.godot/imported/walls.png-dd1c8e5c66f9d6b8347f4c99597e7720.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/KenneyProtoTextures/Green/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-ddd7b5168c1f5353540a770486e03f40.s3tc.ctex"]
+source_file="res://Assets/Textures/walls.png"
+dest_files=["res://.godot/imported/walls.png-dd1c8e5c66f9d6b8347f4c99597e7720.s3tc.ctex"]
 
 [params]
 

@@ -1,5 +1,6 @@
 extends Node
 
+var gameState : String = "Walk"
 
 var score : float = 0
 signal changeScore(addScore: float)
@@ -11,12 +12,18 @@ signal flipperUp
 signal flipperDown
 
 signal killBall
+signal finishChoose
+signal setFlipperActive
 
 signal openPaper(text: String)
+signal hidePapers
 
 var clues: int = 0
 signal updateClues
 var currentCase : int = 1
+
+signal pickUpPhone
+signal putDownPhone
 
 var cases: Dictionary = {
 	"1" : {
