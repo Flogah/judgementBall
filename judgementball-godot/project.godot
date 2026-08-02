@@ -25,6 +25,12 @@ Global="*uid://dur0l1hurtasc"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[file_customization]
+
+folder_colors={
+"res://Scenes/phone/": "red"
+}
+
 [global_group]
 
 ball=""

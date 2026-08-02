@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4klxlewqe71s"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8j5xfixpx7dn" path="res://Assets/Models/Payphone/payphonebody.obj" id="1_5o8lg"]
-[ext_resource type="Script" uid="uid://c1xk1jlp0kv34" path="res://Scenes/payphone.gd" id="1_28mta"]
+[ext_resource type="Script" uid="uid://c1xk1jlp0kv34" path="res://Scenes/phone/payphone.gd" id="1_28mta"]
 [ext_resource type="Material" uid="uid://ds2ml35n4aaj0" path="res://Assets/Material/mat_payphone.tres" id="2_7y3ng"]
 [ext_resource type="ArrayMesh" uid="uid://dbe8bo7cermd6" path="res://Assets/Models/Payphone/payphonehandle.obj" id="2_f6jh5"]
 
@@ -12,6 +12,7 @@ size = Vector3(0.9008789, 1.9873047, 1.4501953)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_28mta")
+transition_duration = 1.0
 highlight_model = NodePath("Handle")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=906315985]
@@ -26,3 +27,9 @@ shape = SubResource("BoxShape3D_ifpyu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89317656, 0.053411663, 0.32408774)
 material_override = ExtResource("2_7y3ng")
 mesh = ExtResource("2_f6jh5")
+
+[node name="handlePosPassive" type="Node3D" parent="." unique_id=1058421373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89317656, 0.053411663, 0.32408774)
+
+[node name="handlePosActive" type="Node3D" parent="." unique_id=1838983596]
+transform = Transform3D(-1, 0, -8.742278e-08, 2.9994002e-08, 0.939302, -0.3430914, 8.2116394e-08, -0.3430914, -0.939302, 1.8362398, 0.053, 0)
