@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cr5btjjgke0kr"]
+
+[ext_resource type="Script" uid="uid://cby2d0djnahm2" path="res://Scripts/GameState/choose.gd" id="1_3ey6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jb5s"]
+bg_color = Color(0.49502194, 0, 0.044262044, 0)
+border_width_left = 10
+border_width_top = 1
+border_width_right = 10
+border_width_bottom = 1
+border_color = Color(0.51720196, 0.04545342, 0.101603664, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7kio"]
+bg_color = Color(0, 0.30869892, 0.13572404, 0)
+border_width_left = 10
+border_width_top = 1
+border_width_right = 10
+border_width_bottom = 1
+border_color = Color(0.11124956, 0.32613894, 0.10903344, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Choose" type="Control" unique_id=756200434]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ey6d")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=753156933]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -482.0
+offset_top = 90.0
+offset_right = 482.0
+offset_bottom = 227.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[shake rate=20.0 level=15 connected=1]WÄHLE SEIN SCHICKSAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=143203321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 250.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="schuldig" type="RichTextLabel" parent="VBoxContainer" unique_id=736388610]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[shake rate=20.0 level=15 connected=1]SCHULDIG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Button" parent="VBoxContainer/schuldig" unique_id=1643060735]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -57.989998
+offset_bottom = -49.989998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 15.125)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8jb5s")
+
+[node name="unschuldig" type="RichTextLabel" parent="VBoxContainer" unique_id=121344385]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[shake rate=20.0 level=15 connected=1]UNSCHULDIG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttonu" type="Button" parent="VBoxContainer/unschuldig" unique_id=355532631]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -57.989998
+offset_bottom = -49.989998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 15.125)
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7kio")
+
+[connection signal="button_up" from="VBoxContainer/schuldig/Buttons" to="." method="_on_buttons_button_up"]
+[connection signal="button_up" from="VBoxContainer/unschuldig/Buttonu" to="." method="_on_buttonu_button_up"]

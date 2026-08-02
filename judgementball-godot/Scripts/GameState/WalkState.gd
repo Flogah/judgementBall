@@ -1,7 +1,11 @@
 extends GameState
 class_name WalkState
 
-func _process(delta: float) -> void:
-	if active:
-		if Input.is_action_pressed("testInput"):
-			Transitioned.emit(self, "chooseState")
+func _ready() -> void:
+	Global.connect("killBall", switch)
+
+func Enter():
+	Global.gameState = "Walk"
+
+func switch():
+	Transitioned.emit(self, "ChooseState")
