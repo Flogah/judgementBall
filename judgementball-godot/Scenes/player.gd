@@ -13,6 +13,7 @@ signal on_unfocus
 
 func _ready() -> void:
 	menu.visible = false
+	
 
 func _physics_process(delta: float) -> void:
 	highlight_interactable()
@@ -41,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") && CameraSignal.currentState == "Free":
 		if is_looking_at_interactable():
 			var collider = interaction_ray_cast_3d.get_collider()
 			collider.interact()

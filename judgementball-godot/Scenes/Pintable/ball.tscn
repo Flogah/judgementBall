@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://cfjhgmrt53qn" path="res://Scripts/ball.gd" id="1_irkkq"]
 [ext_resource type="Material" uid="uid://d1gkoq3dqg3nm" path="res://Assets/Materials/metalBall.tres" id="2_irbrd"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8i7r5"]
+friction = 0.0
+bounce = 0.65
+
 [sub_resource type="SphereMesh" id="SphereMesh_8jb5s"]
 radius = 0.05
 height = 0.1
@@ -13,8 +17,9 @@ points = PackedVector3Array(-0.04994337, -0.0023884103, 0, -0.04970871, -0.00238
 [sub_resource type="SphereShape3D" id="SphereShape3D_ltd7w"]
 radius = 0.055
 
-[node name="ball" type="RigidBody3D" unique_id=1940181704]
+[node name="ball" type="RigidBody3D" unique_id=1940181704 groups=["ball"]]
 collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_8i7r5")
 script = ExtResource("1_irkkq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=77853709]
