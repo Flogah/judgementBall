@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://de5y5ca14crq2"]
+
+[ext_resource type="Material" uid="uid://glcpjrrlg8il" path="res://Assets/Materials/mat_door.tres" id="1_p0e35"]
+[ext_resource type="ArrayMesh" uid="uid://dbysw6dpwrj2s" path="res://Assets/Models/door.obj" id="2_fahql"]
+
+[node name="Door" type="Node3D" unique_id=1788368620]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1273416462]
+material_override = ExtResource("1_p0e35")
+mesh = ExtResource("2_fahql")

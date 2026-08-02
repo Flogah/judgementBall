@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ds2ml35n4aaj0"]
+
+[ext_resource type="Texture2D" uid="uid://b72xlrdx16x02" path="res://Assets/Textures/PayphoneTex.png" id="1_jjf0g"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_jjf0g")
+texture_filter = 0
