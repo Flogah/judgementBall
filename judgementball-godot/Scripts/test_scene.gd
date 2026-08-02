@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 			var activeBall = pinball.instantiate()
 			add_child(activeBall)
 			activeBall.transform.origin = Vector3(-0.7, 0.6, -0.2)
-			ball = get_tree().get_nodes_in_group("ball")
+		ball = get_tree().get_nodes_in_group("ball")
 
 func setActive():
 	active = !active

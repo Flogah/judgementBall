@@ -10,6 +10,8 @@ signal hitBumper
 signal flipperUp
 signal flipperDown
 
+signal killBall
+
 signal openPaper(text: String)
 
 var clues: int = 0

@@ -32,7 +32,7 @@ transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0.938389
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0.938643, 0.25209284, -0.506)
 
 [node name="scoreArea" parent="." unique_id=1687520017 instance=ExtResource("5_0qhok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3203155, -0.14841853, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6523563, 0.11992513, 0)
 
 [node name="bumper" parent="." unique_id=1890445088 node_paths=PackedStringArray("audioPlayer") instance=ExtResource("6_n8lgc")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.32, 0)
