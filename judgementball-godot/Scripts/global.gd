@@ -18,6 +18,9 @@ var clues: int = 0
 signal updateClues
 var currentCase : int = 1
 
+signal pickUpPhone
+signal putDownPhone
+
 var cases: Dictionary = {
 	"1" : {
 				"1" : "Das Opfer wurde im Gruppenraum der Station E der geschlossenen Psychiatrischen Institutsambulanz Hannover aufgefunden. Jeweils der Boden und die Wände sind Blutverschmiert und verwüstet.",
