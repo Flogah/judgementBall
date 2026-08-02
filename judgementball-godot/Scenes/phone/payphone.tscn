@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c1xk1jlp0kv34" path="res://Scenes/phone/payphone.gd" id="1_28mta"]
 [ext_resource type="Material" uid="uid://ds2ml35n4aaj0" path="res://Assets/Material/mat_payphone.tres" id="2_7y3ng"]
 [ext_resource type="ArrayMesh" uid="uid://dbe8bo7cermd6" path="res://Assets/Models/Payphone/payphonehandle.obj" id="2_f6jh5"]
+[ext_resource type="Script" uid="uid://cxyncmab16td1" path="res://Scenes/phone/handle.gd" id="5_1od13"]
 [ext_resource type="Script" uid="uid://cg5r2emgsmjd0" path="res://Scenes/phone/telefonate.gd" id="5_bc1lu"]
 [ext_resource type="AudioStream" uid="uid://d10w2345hddyr" path="res://Assets/Sounds/Telefonate/McDonalds.wav" id="6_wwocu"]
 [ext_resource type="AudioStream" uid="uid://v0jj0s8c2q32" path="res://Assets/Sounds/Telefonate/Milf_Hunter.wav" id="7_1od13"]
@@ -34,6 +35,7 @@ shape = SubResource("BoxShape3D_ifpyu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89317656, 0.053411663, 0.32408774)
 material_override = ExtResource("2_7y3ng")
 mesh = ExtResource("2_f6jh5")
+script = ExtResource("5_1od13")
 
 [node name="handlePosPassive" type="Node3D" parent="." unique_id=1058421373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89317656, 0.053411663, 0.32408774)
@@ -41,8 +43,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89317656, 0.053411663, 0.32
 [node name="handlePosActive" type="Node3D" parent="." unique_id=1838983596]
 transform = Transform3D(-1, 0, -8.742278e-08, 2.9994002e-08, 0.939302, -0.3430914, 8.2116394e-08, -0.3430914, -0.939302, 1.3193665, 0.053, 0)
 
+[node name="handlePosActiveUp" type="Node3D" parent="." unique_id=629255420]
+transform = Transform3D(-1, 0, -8.742278e-08, 2.9994002e-08, 0.939302, -0.3430914, 8.2116394e-08, -0.3430914, -0.939302, 1.3193665, -0.06613299, 0)
+
+[node name="handlePosActiveDown" type="Node3D" parent="." unique_id=1100093803]
+transform = Transform3D(-1, 0, -8.742278e-08, 2.9994002e-08, 0.939302, -0.3430914, 8.2116394e-08, -0.3430914, -0.939302, 1.3193665, 0.1694341, 0)
+
 [node name="Telefonate" type="AudioStreamPlayer3D" parent="." unique_id=2143636532]
 script = ExtResource("5_bc1lu")
 streams = Array[AudioStream]([ExtResource("6_wwocu"), ExtResource("7_1od13"), ExtResource("8_gsbb8"), ExtResource("9_n50s4"), ExtResource("10_c2mf5"), ExtResource("11_huuo4")])
 
 [connection signal="finished" from="Telefonate" to="." method="_on_telefonate_finished"]
+[connection signal="finished" from="Telefonate" to="Handle" method="_on_telefonate_finished"]

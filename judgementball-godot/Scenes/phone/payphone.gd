@@ -30,7 +30,7 @@ func interact():
 
 func _on_telefonate_finished() -> void:
 	if tween:
-			tween.kill()
+		tween.kill()
 	tween = create_tween().set_parallel(true)
 	tween.set_trans(Tween.TRANS_CUBIC) 
 	tween.set_ease(Tween.EASE_IN_OUT)
