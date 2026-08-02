@@ -10,7 +10,8 @@ func _on_buttons_button_up() -> void:
 	Global.clues = 0
 	Global.clueScore = 0
 	Global.hidePapers.emit()
-	Global.changeScore.emit(-Global.score)
+	Global.score = 0
+	Global.changeScore.emit(0)
 	if Global.currentCase < Global.cases.size()-1:
 		Global.currentCase += 1
 
@@ -20,6 +21,7 @@ func _on_buttonu_button_up() -> void:
 	Global.clues = 0
 	Global.hidePapers.emit()
 	Global.clueScore = 0
-	Global.changeScore.emit(-Global.score)
+	Global.score = 0
+	Global.changeScore.emit(0)
 	if Global.currentCase < Global.cases.size()-1:
 		Global.currentCase += 1

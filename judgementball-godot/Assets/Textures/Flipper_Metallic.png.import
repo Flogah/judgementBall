@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djut0mwar1gkw"
-path.s3tc="res://.godot/imported/BumperTex.png-172fd2d6bd29e32b6c977c20a16183b7.s3tc.ctex"
+uid="uid://clec0s6xt4kc0"
+path.s3tc="res://.godot/imported/Flipper_Metallic.png-33437c6e2856d57eb08e3235e1615b46.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/BumperTex.png"
-dest_files=["res://.godot/imported/BumperTex.png-172fd2d6bd29e32b6c977c20a16183b7.s3tc.ctex"]
+source_file="res://Assets/Textures/Flipper_Metallic.png"
+dest_files=["res://.godot/imported/Flipper_Metallic.png-33437c6e2856d57eb08e3235e1615b46.s3tc.ctex"]
 
 [params]
 

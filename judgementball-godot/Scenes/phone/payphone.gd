@@ -24,6 +24,7 @@ func interact():
 			transition_duration
 		)
 		phoneActive = true
+		tween.finished.connect(func(): Global.pickUpPhone.emit())
 
 
 func _on_telefonate_finished() -> void:
