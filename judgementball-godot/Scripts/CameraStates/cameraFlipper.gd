@@ -2,7 +2,6 @@ extends StateCamera
 class_name cameraFlipper
 
 func _ready() -> void:
-	Global.connect("finishChoose", changeFree)
 	CameraSignal.connect("changeToFree", changeFree)
 
 func Enter():

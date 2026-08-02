@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://vwa743w80ls5"]
 
 [ext_resource type="Script" uid="uid://0rk8wnu4ogsr" path="res://Scripts/flipperLeft.gd" id="1_v66fr"]
+[ext_resource type="ArrayMesh" uid="uid://b5jm6y6xjmp0l" path="res://Assets/Models/paddle.obj" id="2_0ejfl"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_8jb5s"]
-size = Vector3(0.15, 0.48, 0.15)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ynaqo"]
-points = PackedVector3Array(-0.075, -0.24, -0.075, -0.075, -0.24, 0.075, 0, 0.24000002, -0.075, 0.075, -0.24, -0.075, 0.075, -0.24, 0.075, 0, 0.24000002, 0.075)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ndhsj"]
+points = PackedVector3Array(-0.008466124, 0.026188703, -0.09747067, 0.015961133, 0.023889443, 0.0030285292, -0.014792652, -1.7347235e-18, -0.0008039944, 0.009591179, -0.0009031743, -0.09205021, -0.014016741, 0.028125621, -0.0030855997, 0.01681746, 0.00090335123, 0.0018516518, 0.009591179, 0.02980476, -0.08662975, -0.010276893, 0.004516403, -0.0956714, -0.0029585748, 0.024059432, 0.012607963, 0.009049, 0.028966773, 0.0062240767, -0.006662073, -0.0009031743, -0.09747067, 0.009591179, 0.026188703, -0.0956714, 0.0022024568, 0, 0.009399227, -0.015289311, 0.023103543, -0.013414989, 0.0041723084, 0.004516403, -0.10109186, -0.0046312697, 0.02903368, -0.09474992, -0.009769687, 0.005023627, 0.00983403, 0.009242836, 0.024036828, 0.010729362, -0.010276893, 0.026188703, -0.09205021, -0.009615909, 0.028783148, 0.005597676, -0.016147375, 0.0053012976, -4.7694022e-05, -0.003047253, 0.026188703, -0.10109186, -0.0148463035, 0.023835525, 0.004474324, 0.013965415, 0.028760053, -0.0012201493, 0.003949312, 0.0050070463, 0.011648644, 0.014106938, 1.7347235e-18, 0.0009000919, -0.002929558, 0.029136557, 0.008524236, 0.0023615388, 0.026188703, -0.10109186, -0.009901305, 0.024009582, 0.010575808, -0.003047253, 0.004516403, -0.10109186, 0.0077804094, 0.004516403, -0.09928127, 0.0041723084, -0.0009031743, -0.09928127)
 
 [node name="flipperLeft" type="CharacterBody3D" unique_id=1636917743 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_v66fr")
 mesh = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1167913518]
-transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0, -0.19205785)
-mesh = SubResource("PrismMesh_8jb5s")
+mesh = ExtResource("2_0ejfl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1851616298]
-transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0, -0.19205785)
-shape = SubResource("ConvexPolygonShape3D_ynaqo")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=599545048]
+shape = SubResource("ConvexPolygonShape3D_ndhsj")
