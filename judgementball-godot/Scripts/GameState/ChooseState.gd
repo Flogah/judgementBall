@@ -1,13 +1,17 @@
 extends GameState
 class_name ChooseState
 
+func _ready() -> void:
+	Global.connect("finishChoose", switch)
+
+func Enter() -> void:
+	Global.gameState = "Choose"
+	
+
 func _process(delta: float) -> void:
 	if active:
-		#if Input.is_action_pressed("interact"):
-			#print("kill")
-			#
-		#elif Input.is_action_pressed("rightClick"):
-			#print("spare")
-			
-		if Input.is_action_pressed("testInput"):
-			Transitioned.emit(self, "WalkState")
+		print(8)
+
+func switch():
+	Global.setFlipperActive.emit()
+	Transitioned.emit(self, "walkState")

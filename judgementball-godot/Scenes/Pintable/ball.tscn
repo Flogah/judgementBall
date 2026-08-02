@@ -18,7 +18,7 @@ points = PackedVector3Array(-0.04994337, -0.0023884103, 0, -0.04970871, -0.00238
 radius = 0.055
 
 [node name="ball" type="RigidBody3D" unique_id=1940181704 groups=["ball"]]
-collision_layer = 3
+collision_layer = 9
 physics_material_override = SubResource("PhysicsMaterial_8i7r5")
 script = ExtResource("1_irkkq")
 
