@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bggjk3kfqt8qr" path="res://Assets/Textures/walls.png" id="2_6mpvv"]
 [ext_resource type="PackedScene" uid="uid://pc7it30eng54" path="res://Scenes/player.tscn" id="3_gkney"]
 [ext_resource type="PackedScene" uid="uid://de5y5ca14crq2" path="res://Scenes/door.tscn" id="3_nfrpb"]
+[ext_resource type="Texture2D" uid="uid://c4hc55k7spiou" path="res://Assets/Textures/Floor.png" id="3_ojh4s"]
 [ext_resource type="PackedScene" uid="uid://bddo4ugcgqxi6" path="res://Scenes/sky_with_eyes.tscn" id="4_6mpvv"]
-[ext_resource type="PackedScene" uid="uid://4klxlewqe71s" path="res://Scenes/payphone.tscn" id="6_4gp0m"]
+[ext_resource type="PackedScene" uid="uid://4klxlewqe71s" path="res://Scenes/phone/payphone.tscn" id="6_4gp0m"]
 [ext_resource type="PackedScene" uid="uid://ji36x1atyioo" path="res://Scenes/table.tscn" id="7_phao3"]
 [ext_resource type="PackedScene" uid="uid://b5h0gwa8f1a4n" path="res://Scenes/papier.tscn" id="8_phao3"]
 
@@ -23,10 +24,14 @@ size = Vector2(4, 2)
 size = Vector3(4, 2, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gp0m"]
+albedo_texture = ExtResource("3_ojh4s")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+texture_filter = 0
+texture_repeat = false
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ifpyu"]
 material = SubResource("StandardMaterial3D_4gp0m")
-size = Vector2(4, 2)
+size = Vector2(2, 4)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ifpyu"]
 
@@ -58,9 +63,11 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2, 
 [node name="Floor" type="StaticBody3D" parent="Walls" unique_id=601455337]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Floor" unique_id=1027102165]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ifpyu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Floor" unique_id=2055130706]
+visible = false
 shape = SubResource("WorldBoundaryShape3D_ifpyu")
 
 [node name="Door" parent="Walls" unique_id=1788368620 instance=ExtResource("3_nfrpb")]
